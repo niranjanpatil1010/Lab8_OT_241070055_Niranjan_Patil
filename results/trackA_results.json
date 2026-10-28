@@ -1,0 +1,212 @@
+{
+ "deterministic": {
+  "convex_quadratic": {
+   "GD": {
+    "best_lr": 0.03,
+    "final_f": 9.905198613333639e-09,
+    "iters": 344,
+    "n_lr_diverged": 2,
+    "n_lr_converged": 2
+   },
+   "Momentum": {
+    "best_lr": 0.01,
+    "final_f": 2.989453870800249e-09,
+    "iters": 167,
+    "n_lr_diverged": 2,
+    "n_lr_converged": 5
+   },
+   "NAG": {
+    "best_lr": 0.03,
+    "final_f": 8.734516478039205e-11,
+    "iters": 87,
+    "n_lr_diverged": 3,
+    "n_lr_converged": 4
+   },
+   "AdaGrad": {
+    "best_lr": 1.0,
+    "final_f": 8.582096707950635e-09,
+    "iters": 106,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 2
+   },
+   "RMSProp": {
+    "best_lr": 1.0,
+    "final_f": 3.5987556484168242e-09,
+    "iters": 9,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 6
+   },
+   "Adam": {
+    "best_lr": 1.0,
+    "final_f": 8.321503611767857e-09,
+    "iters": 182,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 4
+   },
+   "Newton": {
+    "best_lr": 1.0,
+    "final_f": 1.3124999507399491e-15,
+    "iters": 1,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 1
+   }
+  },
+  "rosenbrock_nonconvex": {
+   "GD": {
+    "best_lr": 0.001,
+    "final_f": 0.07820750799340445,
+    "iters": 2000,
+    "n_lr_diverged": 5,
+    "n_lr_converged": 0
+   },
+   "Momentum": {
+    "best_lr": 0.003,
+    "final_f": 9.939236699148267e-09,
+    "iters": 617,
+    "n_lr_diverged": 5,
+    "n_lr_converged": 2
+   },
+   "NAG": {
+    "best_lr": 0.001,
+    "final_f": 9.95948681588217e-09,
+    "iters": 1982,
+    "n_lr_diverged": 6,
+    "n_lr_converged": 1
+   },
+   "AdaGrad": {
+    "best_lr": 1.0,
+    "final_f": 0.005863265481293076,
+    "iters": 2000,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 0
+   },
+   "RMSProp": {
+    "best_lr": 0.003,
+    "final_f": 0.0050877516693065596,
+    "iters": 2000,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 0
+   },
+   "Adam": {
+    "best_lr": 0.3,
+    "final_f": 9.75719822863338e-09,
+    "iters": 820,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 2
+   },
+   "Newton": {
+    "best_lr": 1.0,
+    "final_f": 1.8629349767465494e-11,
+    "iters": 5,
+    "n_lr_diverged": 0,
+    "n_lr_converged": 1
+   }
+  }
+ },
+ "noisy_objective_gap_to_optimum_loss": {
+  "GD(full batch)": {
+   "mean_gap": 0.05189711850077766,
+   "std_gap": 1.0235750533041807e-16
+  },
+  "SGD(bs=1)": {
+   "mean_gap": 0.011313329935464012,
+   "std_gap": 0.006511580015584075
+  },
+  "minibatch(bs=32)": {
+   "mean_gap": 0.0011718905241315692,
+   "std_gap": 0.0006830088037892442
+  },
+  "SGD(bs=1) + lr decay": {
+   "mean_gap": 8.076999230888227e-07,
+   "std_gap": 2.8138387499040335e-07
+  }
+ },
+ "gauss_newton": {
+  "GN_cost_by_iter": [
+   72964.13540172367,
+   3490.4284831735717,
+   318.5480381084236,
+   8.934652189846176,
+   4.19199688323652,
+   0.04994306843121547,
+   0.03892897580388585,
+   0.03892887747387901,
+   0.038928877473838025,
+   0.03892887747383791
+  ],
+  "GD_cost_by_iter": [
+   201.93495087806886,
+   92.2164204921449,
+   3.5798901406868913,
+   3.3964109277215115,
+   3.2247902704795806,
+   3.0664098220961025,
+   2.923329020104589,
+   2.804239131129434,
+   2.719282841847202,
+   2.7140054596504073
+  ],
+  "GN_params": [
+   1.9968202958532764,
+   0.699376612984662
+  ]
+ },
+ "backprop_mlp": {
+  "max_relative_gradient_check_error": 2.0854834697717313e-09,
+  "results": {
+   "GD": {
+    "final_loss": 0.21956918345377413,
+    "accuracy": 0.98
+   },
+   "Adam": {
+    "final_loss": 0.21725905018597896,
+    "accuracy": 0.98
+   }
+  }
+ },
+ "curvature": {
+  "hvp_vs_exact_max_abs_err": 9.404949041780242e-12,
+  "top_eig_power_iter_via_HVP": 0.28220796273091,
+  "top_eig_exact": 0.28220796273992305,
+  "hessian_diag": [
+   0.2119,
+   0.2293,
+   0.2313,
+   0.2343,
+   0.2398,
+   0.1977
+  ],
+  "empirical_fisher_diag": [
+   0.217,
+   0.2083,
+   0.2294,
+   0.242,
+   0.2314,
+   0.2208
+  ]
+ },
+ "landscape": {
+  "saddle_GD_from_exact_saddle": [
+   0.0,
+   0.0
+  ],
+  "saddle_GD_with_noise": [
+   -0.032,
+   1.404
+  ],
+  "saddle_newton_from__03_05": [
+   0.0,
+   0.0
+  ],
+  "local_minima": {
+   "-2": -1.300839565941578,
+   "-0.5": -1.3008395659415766,
+   "0.5": 1.1309011226299848,
+   "2": 1.130901122629987
+  },
+  "local_minima_values": {
+   "left": -3.5138999999999996,
+   "right": -1.0702263900000002
+  }
+ }
+}

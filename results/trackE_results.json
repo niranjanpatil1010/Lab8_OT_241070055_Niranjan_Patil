@@ -1,0 +1,110 @@
+[
+ {
+  "n": 20,
+  "T": 13,
+  "edges": 148,
+  "random": {
+   "mean": 296.4,
+   "std": 11.943198901466891,
+   "feasible_runs": 10,
+   "time": 0.011837458610534668
+  },
+  "greedy": {
+   "obj": 244.0,
+   "time": 0.0008425712585449219
+  },
+  "greedy+LS": {
+   "obj": 205.0,
+   "time": 0.15921640396118164
+  },
+  "ilp": {
+   "obj": 217.0,
+   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+   "runtime": 60.193784952163696,
+   "gap": 0.4594470046082953,
+   "nodes": 2,
+   "bound": 117.3
+  }
+ },
+ {
+  "n": 40,
+  "T": 15,
+  "edges": 427,
+  "random": {
+   "mean": 482.7000000000001,
+   "std": 23.930942313247925,
+   "feasible_runs": 10,
+   "time": 0.03338079452514649
+  },
+  "greedy": {
+   "obj": 411.6,
+   "time": 0.010095357894897461
+  },
+  "greedy+LS": {
+   "obj": 299.6,
+   "time": 1.7687911987304688
+  },
+  "ilp": {
+   "obj": 462.6,
+   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+   "runtime": 60.42217779159546,
+   "gap": 0.6852001617468662,
+   "nodes": 0,
+   "bound": 155.7
+  }
+ },
+ {
+  "n": 60,
+  "T": 15,
+  "edges": 735,
+  "random": {
+   "mean": 640.3,
+   "std": 15.900943368240792,
+   "feasible_runs": 10,
+   "time": 0.2836045026779175
+  },
+  "greedy": {
+   "obj": 638.9,
+   "time": 0.01160573959350586
+  },
+  "greedy+LS": {
+   "obj": 481.9,
+   "time": 1.6211433410644531
+  },
+  "ilp": {
+   "obj": 608.9,
+   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+   "runtime": 60.530322790145874,
+   "gap": 1.0,
+   "nodes": 0,
+   "bound": 0.0
+  }
+ },
+ {
+  "n": 100,
+  "T": 19,
+  "edges": 1388,
+  "random": {
+   "mean": 939.6,
+   "std": 19.043108989868227,
+   "feasible_runs": 10,
+   "time": 0.16872885227203369
+  },
+  "greedy": {
+   "obj": 1002.0,
+   "time": 0.024636030197143555
+  },
+  "greedy+LS": {
+   "obj": 799.0,
+   "time": 2.6870782375335693
+  },
+  "ilp": {
+   "obj": 810.0,
+   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+   "runtime": 61.36531352996826,
+   "gap": 1.0,
+   "nodes": 0,
+   "bound": 0.0
+  }
+ }
+]

@@ -1,0 +1,159 @@
+{
+ "metadata": {
+  "hardware": "SIMULATED (PennyLane default.qubit / default.mixed)",
+  "is_hardware": false
+ },
+ "C1_qaoa_trackB": {
+  "problem": "7-qubit Max-Cut from Track B",
+  "classical_optimal_cut": 33,
+  "qaoa_p1": {
+   "expected_cut": 17.283,
+   "approximation_ratio": 0.524,
+   "optimal_params": [
+    [
+     0.5097779800305988
+    ],
+    [
+     0.4043384725551458
+    ]
+   ]
+  },
+  "qaoa_p2": {
+   "expected_cut": 18.294,
+   "approximation_ratio": 0.554,
+   "sampled_best_cut": 20,
+   "sampled_best_bitstring": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "max_probability": 0.0402
+  },
+  "comparison_with_classical": {
+   "classical_brute_force": 33,
+   "classical_simulated_annealing": 33.0,
+   "qaoa_p2_expected": 18.294,
+   "qaoa_p2_best_sample": 20
+  }
+ },
+ "C2_vqe_ising": {
+  "model": "4-qubit Transverse-Field Ising Model (J=1.0, g=0.8)",
+  "exact_ground_state_energy": -4.14556,
+  "vqe_final_energy": -3.83468,
+  "energy_absolute_error": 0.310882,
+  "relative_error_pct": 7.4992,
+  "ansatz": "Hardware-efficient (RY + CNOT ladder, depth=2)",
+  "iterations": 40
+ },
+ "C3_optimizers": {
+  "exact_min_energy": -2.0,
+  "parameter_shift": {
+   "final_cost": -1.9505,
+   "time_s": 0.2181,
+   "circuit_evals_per_step": 12
+  },
+  "spsa": {
+   "final_cost": -1.0072,
+   "time_s": 0.3137,
+   "circuit_evals_per_step": 2
+  },
+  "qng": {
+   "final_cost": -2.0,
+   "time_s": 0.5737,
+   "note": "Uses Fubini-Study quantum metric tensor for natural gradient descent"
+  }
+ },
+ "C4_pqc_qnn": {
+  "task": "2-qubit Non-linear Concentric Circles Classification",
+  "n_samples": 60,
+  "n_parameters": 12,
+  "train_accuracy": 0.7167,
+  "final_mse_loss": 0.9468,
+  "iterations": 30
+ },
+ "C5_finite_shots": {
+  "shots_50": {
+   "mean": -0.016,
+   "std": 0.1091,
+   "theoretical_std": 0.1414
+  },
+  "shots_200": {
+   "mean": 0.018,
+   "std": 0.0637,
+   "theoretical_std": 0.0707
+  },
+  "shots_1000": {
+   "mean": 0.0006,
+   "std": 0.0203,
+   "theoretical_std": 0.0316
+  },
+  "shots_10000": {
+   "mean": -0.0,
+   "std": 0.0139,
+   "theoretical_std": 0.01
+  },
+  "shots_infinite_analytic": {
+   "value": 0.0,
+   "std": 0.0
+  }
+ },
+ "C6_hardware_noise": {
+  "depolarizing_p_0.0": {
+   "expval_Z0_Z1": 1.0,
+   "ideal_value": 1.0,
+   "fidelity_degradation_pct": 0.0
+  },
+  "depolarizing_p_0.02": {
+   "expval_Z0_Z1": 0.9474,
+   "ideal_value": 1.0,
+   "fidelity_degradation_pct": 5.26
+  },
+  "depolarizing_p_0.05": {
+   "expval_Z0_Z1": 0.8711,
+   "ideal_value": 1.0,
+   "fidelity_degradation_pct": 12.89
+  },
+  "depolarizing_p_0.1": {
+   "expval_Z0_Z1": 0.7511,
+   "ideal_value": 1.0,
+   "fidelity_degradation_pct": 24.89
+  },
+  "depolarizing_p_0.2": {
+   "expval_Z0_Z1": 0.5378,
+   "ideal_value": 1.0,
+   "fidelity_degradation_pct": 46.22
+  }
+ },
+ "C7_barren_plateaus": {
+  "qubit_counts": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "n_random_initializations": 25,
+  "gradient_variances": {
+   "qubits_2": {
+    "variance": 0.19929,
+    "std": 0.4464191
+   },
+   "qubits_4": {
+    "variance": 0.08415898,
+    "std": 0.2901017
+   },
+   "qubits_6": {
+    "variance": 0.04751004,
+    "std": 0.217968
+   },
+   "qubits_8": {
+    "variance": 0.01850905,
+    "std": 0.136048
+   }
+  },
+  "theoretical_scaling": "Var[grad] ~ 2^{-n} (exponentially vanishing gradients / Barren Plateau)"
+ }
+}

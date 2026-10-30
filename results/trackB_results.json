@@ -1,0 +1,203 @@
+{
+ "B1_knapsack": {
+  "n_items": 25,
+  "capacity": 50,
+  "greedy": {
+   "value": 147,
+   "time_s": 6e-05,
+   "gap_from_optimal_pct": 2.65
+  },
+  "dp_exact": {
+   "value": 151,
+   "time_s": 0.00016
+  },
+  "bnb_exact": {
+   "value": 151,
+   "time_s": 0.00014
+  },
+  "ilp_exact": {
+   "value": 151,
+   "time_s": 0.00789
+  },
+  "validation": "DP=B&B=ILP (all exact); greedy feasible; all verified by independent validator"
+ },
+ "B2_scheduling": {
+  "n_jobs": 15,
+  "greedy_eft": {
+   "selected": [
+    8,
+    0,
+    1,
+    7
+   ],
+   "total_weight": 25,
+   "note": "Greedy EFT maximises job count, not weight; may be suboptimal"
+  },
+  "dp_exact": {
+   "selected": [
+    0,
+    1,
+    7
+   ],
+   "total_weight": 23
+  },
+  "greedy_gap_pct": -8.7,
+  "validation": "DP exact; both verified by overlap checker"
+ },
+ "B3_maxcut": {
+  "n_nodes": 7,
+  "n_edges": 11,
+  "weight_matrix": [
+   [
+    0,
+    5,
+    0,
+    2,
+    0,
+    4,
+    0
+   ],
+   [
+    5,
+    0,
+    1,
+    0,
+    2,
+    0,
+    5
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    2,
+    0,
+    0,
+    0,
+    5,
+    0,
+    3
+   ],
+   [
+    0,
+    2,
+    0,
+    5,
+    0,
+    1,
+    0
+   ],
+   [
+    4,
+    0,
+    3,
+    0,
+    1,
+    0,
+    2
+   ],
+   [
+    0,
+    5,
+    0,
+    3,
+    0,
+    2,
+    0
+   ]
+  ],
+  "greedy": {
+   "cut": 22,
+   "time_s": 7e-05,
+   "gap_from_optimal_pct": 33.33
+  },
+  "brute_force": {
+   "cut": 33,
+   "time_s": 0.00191
+  },
+  "sa_10runs": {
+   "mean": 33.0,
+   "std": 0.0,
+   "min": 33,
+   "max": 33
+  },
+  "validation": "All cuts verified by independent cut_value(); brute-force exact over 2^7 partitions"
+ },
+ "B4_qubo_ising": {
+  "n_nodes": 7,
+  "description": "Max-Cut as QUBO: minimise x^T Q x. Binary->Spin: x_i=(1-s_i)/2. Penalty P=lambda*(sum(x_i)-k)^2 for cardinality constraint.",
+  "unconstrained": {
+   "qubo_brute_energy": -33.0,
+   "qubo_brute_cut": 33,
+   "qubo_brute_x": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "ising_h": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "ising_J_nonzero": {
+    "0,1": 2.5,
+    "0,3": 1.0,
+    "0,5": 2.0,
+    "1,2": 0.5,
+    "1,4": 1.0,
+    "1,6": 2.5,
+    "2,5": 1.5,
+    "3,4": 2.5,
+    "3,6": 1.5,
+    "4,5": 0.5,
+    "5,6": 1.0
+   },
+   "ising_const": -16.5,
+   "sa_10runs_energy": {
+    "mean": -33.0,
+    "std": 0.0
+   },
+   "verification": "Ising(h,J)+const == QUBO energy: PASS"
+  },
+  "constrained_penalty": {
+   "lambda": 10.0,
+   "k": 3,
+   "qubo_brute_energy": -123.0,
+   "qubo_brute_cut": 33,
+   "qubo_brute_x": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "sa_10runs_energy": {
+    "mean": -122.2,
+    "std": 1.6
+   },
+   "verification": "|S|=3 == k=3: PASS"
+  },
+  "spin_conversion_check": {
+   "ising_energy_direct": -16.5,
+   "ising_energy_via_hJ_plus_c": -33.0,
+   "qubo_energy": -33.0,
+   "all_match": 1.0
+  }
+ }
+}

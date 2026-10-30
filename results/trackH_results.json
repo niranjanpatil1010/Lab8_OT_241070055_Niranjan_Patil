@@ -1,0 +1,93 @@
+{
+ "dataset": {
+  "engine": "SQLite 3",
+  "table_rows": {
+   "customers": 10000,
+   "orders": 30000,
+   "lineitems": 60000,
+   "total": 100000
+  },
+  "unindexed_storage_mb": 3.48,
+  "indexed_storage_mb": 5.22,
+  "storage_overhead_kb": 2016.0
+ },
+ "storage_budget_kb": 2224.8,
+ "methods_comparison": {
+  "greedy": {
+   "selected_indexes": [
+    "idx_cust_acct",
+    "idx_lineitem_order",
+    "idx_cust_mkt",
+    "idx_orders_cust",
+    "idx_orders_date"
+   ],
+   "predicted_benefit_ms": 67.65,
+   "storage_cost_kb": 2016.0
+  },
+  "dp": {
+   "selected_indexes": [
+    "idx_cust_acct",
+    "idx_cust_mkt",
+    "idx_orders_date",
+    "idx_orders_cust",
+    "idx_lineitem_order"
+   ],
+   "predicted_benefit_ms": 67.65,
+   "storage_cost_kb": 2016.0
+  },
+  "ilp": {
+   "selected_indexes": [
+    "idx_cust_acct",
+    "idx_cust_mkt",
+    "idx_orders_date",
+    "idx_orders_cust",
+    "idx_lineitem_order"
+   ],
+   "predicted_benefit_ms": 67.65,
+   "storage_cost_kb": 2016.0
+  }
+ },
+ "workload_performance": {
+  "default_optimizer_baseline": {
+   "latency_mean_ms": 114.34,
+   "latency_std_ms": 9.28,
+   "indexes": []
+  },
+  "optimized_index_configuration": {
+   "latency_mean_ms": 111.23,
+   "latency_std_ms": 49.61,
+   "speedup_ratio": 1.03,
+   "latency_reduction_pct": 2.72,
+   "indexes": [
+    "idx_cust_acct",
+    "idx_cust_mkt",
+    "idx_orders_date",
+    "idx_orders_cust",
+    "idx_lineitem_order"
+   ]
+  }
+ },
+ "explain_query_plans": {
+  "Q1_Cust_Segment": {
+   "baseline_plan": "[0,216] SCAN customers | [0,0] USE TEMP B-TREE FOR GROUP BY",
+   "optimized_plan": "[0,225] SCAN customers USING INDEX idx_cust_mkt"
+  },
+  "Q2_Order_Date_Join": {
+   "baseline_plan": "[0,216] SCAN o | [0,45] SEARCH c USING INTEGER PRIMARY KEY (rowid=?) | [0,0] USE TEMP B-TREE FOR GROUP BY",
+   "optimized_plan": "[0,165] SEARCH o USING INDEX idx_orders_date (order_date>? AND order_date<?) | [0,45] SEARCH c USING INTEGER PRIMARY KEY (rowid=?) | [0,0] USE TEMP B-TREE FOR GROUP BY"
+  },
+  "Q3_Lineitem_Price": {
+   "baseline_plan": "[0,216] SCAN l | [0,45] SEARCH o USING INTEGER PRIMARY KEY (rowid=?) | [0,0] USE TEMP B-TREE FOR GROUP BY",
+   "optimized_plan": "[0,216] SCAN l | [0,45] SEARCH o USING INTEGER PRIMARY KEY (rowid=?) | [0,0] USE TEMP B-TREE FOR GROUP BY"
+  },
+  "Q4_Discount_Agg": {
+   "baseline_plan": "[0,216] SCAN lineitems | [0,0] USE TEMP B-TREE FOR GROUP BY",
+   "optimized_plan": "[0,216] SCAN lineitems | [0,0] USE TEMP B-TREE FOR GROUP BY"
+  },
+  "Q5_3Way_Join": {
+   "baseline_plan": "[0,216] SCAN l | [0,45] SEARCH o USING INTEGER PRIMARY KEY (rowid=?) | [0,45] SEARCH c USING INTEGER PRIMARY KEY (rowid=?) | [0,0] USE TEMP B-TREE FOR ORDER BY",
+   "optimized_plan": "[0,148] SEARCH o USING COVERING INDEX idx_orders_cust (customer_id>? AND customer_id<?) | [0,45] SEARCH c USING INTEGER PRIMARY KEY (rowid=?) | [0,61] SEARCH l USING INDEX idx_lineitem_order (order_id=?) | [0,0] USE TEMP B-TREE FOR ORDER BY"
+  }
+ },
+ "correctness": "PASS (Exact tuple-by-tuple match for all 5 queries)"
+}

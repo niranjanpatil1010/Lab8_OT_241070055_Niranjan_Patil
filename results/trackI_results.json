@@ -1,0 +1,142 @@
+{
+ "metadata": {
+  "hardware": "SIMULATED (PennyLane default.qubit / default.mixed)",
+  "is_hardware": false
+ },
+ "I1_deutsch_jozsa": {
+  "n_data_qubits": 3,
+  "constant_oracle": {
+   "prob_all_zeros": 1.0,
+   "verdict": "Constant"
+  },
+  "balanced_oracle": {
+   "prob_all_zeros": 0.0,
+   "verdict": "Balanced"
+  },
+  "queries_required": 1,
+  "classical_deterministic_queries_worst_case": 5,
+  "quantum_speedup": "Deterministic exponential separation in queries (1 vs 2^{n-1}+1)"
+ },
+ "I2_bernstein_vazirani": {
+  "target_secret": "1011",
+  "recovered_secret": "1011",
+  "success_probability": 1.0,
+  "queries_required": 1,
+  "classical_queries_required": 4,
+  "speedup": "1 query vs 4 classical queries"
+ },
+ "I3_grover_vs_linear": {
+  "N_8": {
+   "search_space_size": 8,
+   "target_state": 5,
+   "grover_queries": 2,
+   "grover_success_prob": 0.5,
+   "classical_queries": 6,
+   "query_speedup_ratio": 3.0,
+   "grover_simulator_time_s": 0.00521,
+   "classical_linear_time_s": 2.9e-06,
+   "wall_clock_winner": "Classical (Linear Search is faster on classical CPU than simulating 2^n statevector)"
+  },
+  "N_16": {
+   "search_space_size": 16,
+   "target_state": 13,
+   "grover_queries": 3,
+   "grover_success_prob": 0.165,
+   "classical_queries": 14,
+   "query_speedup_ratio": 4.67,
+   "grover_simulator_time_s": 0.006,
+   "classical_linear_time_s": 2.2e-06,
+   "wall_clock_winner": "Classical (Linear Search is faster on classical CPU than simulating 2^n statevector)"
+  },
+  "N_32": {
+   "search_space_size": 32,
+   "target_state": 29,
+   "grover_queries": 4,
+   "grover_success_prob": 0.3617,
+   "classical_queries": 30,
+   "query_speedup_ratio": 7.5,
+   "grover_simulator_time_s": 0.00968,
+   "classical_linear_time_s": 2.3e-06,
+   "wall_clock_winner": "Classical (Linear Search is faster on classical CPU than simulating 2^n statevector)"
+  },
+  "N_64": {
+   "search_space_size": 64,
+   "target_state": 61,
+   "grover_queries": 6,
+   "grover_success_prob": 0.3233,
+   "classical_queries": 62,
+   "query_speedup_ratio": 10.33,
+   "grover_simulator_time_s": 0.01102,
+   "classical_linear_time_s": 6.9e-06,
+   "wall_clock_winner": "Classical (Linear Search is faster on classical CPU than simulating 2^n statevector)"
+  }
+ },
+ "I4_qft": {
+  "n_qubits": 3,
+  "matrix_dimension": 8,
+  "max_absolute_error_vs_classical_fft": 0.0,
+  "fidelity": 1.0,
+  "verification": "PASS (Hand-written gates match exact Discrete Fourier Transform matrix)"
+ },
+ "I5_qpe": {
+  "counting_qubits": 3,
+  "target_unitary": "T-gate (eigenphase phi = 1/8 = 0.125)",
+  "true_phase": 0.125,
+  "estimated_phase": 0.125,
+  "peak_probability": 1.0,
+  "accuracy_error": 0.0
+ },
+ "I6_shor": {
+  "composite_number_N": 15,
+  "coprime_base_a": 7,
+  "modular_order_r": 4,
+  "quantum_subroutine": "QPE on modular multiplication unitary U_a |x> = |(a*x) mod N>",
+  "gcd_factors": [
+   3,
+   5
+  ],
+  "factoring_successful": true,
+  "complexity_comparison": "Shor: O((log N)^2 (log log N)) polynomial vs Classical General Number Field Sieve: sub-exponential"
+ },
+ "I7_quantum_annealing": {
+  "n_spins": 4,
+  "annealing_trotter_steps": 20,
+  "ground_state_energy_exact": -3.5,
+  "annealed_found_energy": -3.5,
+  "ground_state_probability": 0.4197,
+  "found_ground_state": true
+ },
+ "I8_hardware_noise": {
+  "depolarizing_p_0.0": {
+   "success_probability": 1.0,
+   "degradation_pct": 0.0
+  },
+  "depolarizing_p_0.05": {
+   "success_probability": 0.7917,
+   "degradation_pct": 20.83
+  },
+  "depolarizing_p_0.1": {
+   "success_probability": 0.6274,
+   "degradation_pct": 37.26
+  },
+  "depolarizing_p_0.2": {
+   "success_probability": 0.3994,
+   "degradation_pct": 60.06
+  }
+ },
+ "I9_qml_vs_classical": {
+  "dataset": "2D Non-linear Circles (40 samples)",
+  "quantum_kernel_svm": {
+   "accuracy": 0.8,
+   "gram_matrix_computation_time_s": 1.3975,
+   "circuit_evaluations": 780,
+   "wires": 2
+  },
+  "classical_rbf_svm": {
+   "accuracy": 1.0,
+   "training_time_s": 0.00075,
+   "circuit_evaluations": 0
+  },
+  "honest_comparison": "Classical RBF SVM trains in milliseconds (< 0.005s) on CPU, whereas Quantum Kernel requires N*(N-1)/2 = 780 circuit evaluations taking ~2-3 seconds on a simulator. Quantum kernel is only justified when data has underlying discrete algebraic group structure not efficiently representable by classical kernels."
+ }
+}

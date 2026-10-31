@@ -29,3 +29,6 @@ penalty terms for a constraint) and solve classically as the baseline for Track 
 
 ## Tool used
 Antigravity (Claude Sonnet 4.6 Thinking) — code generation, debugging, test writing, report writing
+
+## Commit
+b8f2d8e  [AI:antigravity] Tracks B, C, D, F, H, I (grouped commit)

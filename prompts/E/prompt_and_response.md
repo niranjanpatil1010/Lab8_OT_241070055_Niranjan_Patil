@@ -17,3 +17,5 @@ Every method's output is checked by an independent `validate()`; ILP/greedy/rand
 ## Commit
 f846a4c  [AI:claude] Track E: exam timetabling (random, greedy, greedy+LS, ILP, B&B) + tests
 80f49f7  [AI:claude] Report sections A/E, checklist, failure log (4 real cases)
+
+D5/D6 additions and tool comparison: 4ec719e  [AI:claude]

@@ -11,3 +11,6 @@
 usertests: logs in trackG/logs/. Patch checked with `git apply --check` on pristine commit e93dabe. Unit tests: tests/test_trackG.py. Raw QEMU output: results/trackG_raw.txt.
 ## Commit
 Not committed by the assistant (no commit was requested); user commits with prefix per README.
+
+## Commit
+37ff082  [AI:claude-code] Track G, Track J rewrite, conftest, test_trackA (grouped commit)

@@ -28,3 +28,6 @@ solve with a named Chapter-6 method vs a naive baseline, report gain and any cos
 ## REVISION (final review) — first version was invalid
 The response above describes the FIRST version of Track J, which used a hard-coded list of 20 made-up tests/durations (see FAILURE_LOG #13). It was replaced.
 Revised approach (Claude Sonnet 5.5 via Claude Code): measure the repo's real pytest suite (per-test time via junit, per-test function coverage via coverage.py dynamic contexts), formulate Problem A (min-time set cover, ILP vs greedy) and Problem B (coverage under a 10 % time budget, knapsack ILP vs greedy vs random x10), then re-run the selected subsets and re-check coverage independently. Results in results/trackJ_results.json; verification = trackJ/run.py `covered_functions()` + tests/test_trackJ.py.
+
+## Commit
+37ff082  [AI:claude-code] Track G, Track J rewrite, conftest, test_trackA (grouped commit)

@@ -26,3 +26,6 @@ MGDA and GradNorm vs equal weighting on a two-task model.
 ## Bugs Found & Logged (see FAILURE_LOG.md #7, #8)
 - MGDA gradient sign flip caught by unit test.
 - Windows multiprocessing pool lockup caught during execution and restructured.
+
+## Commit
+b8f2d8e  [AI:antigravity] Tracks B, C, D, F, H, I (grouped commit)

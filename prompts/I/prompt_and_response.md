@@ -31,3 +31,6 @@ Grover vs linear search by query count AND time. Honest negative results are fin
 
 ## Bugs Found & Logged (see FAILURE_LOG.md #10)
 - QPE endianness bit-order reversal between controlled powers and QFT input.
+
+## Commit
+b8f2d8e  [AI:antigravity] Tracks B, C, D, F, H, I (grouped commit)

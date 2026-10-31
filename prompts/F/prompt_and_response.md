@@ -32,3 +32,6 @@ optimized and unoptimized programs must give identical output.
 
 ## Bugs Found & Logged (see FAILURE_LOG.md #11)
 - VM interpreter `PRINT` evaluated constant immediate operands as variable environment keys, caught by the identity validator.
+
+## Commit
+b8f2d8e  [AI:antigravity] Tracks B, C, D, F, H, I (grouped commit)

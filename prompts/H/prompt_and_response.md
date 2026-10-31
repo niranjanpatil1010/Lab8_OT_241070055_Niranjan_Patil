@@ -31,3 +31,6 @@ Compare EXPLAIN plans, latency, storage; query results must be identical.
 
 ## Bugs Found & Logged (see FAILURE_LOG.md #12)
 - Missing `ORDER BY` caused index scan order to differ from sequential table scan order, caught by equality assertion and resolved.
+
+## Commit
+b8f2d8e  [AI:antigravity] Tracks B, C, D, F, H, I (grouped commit)

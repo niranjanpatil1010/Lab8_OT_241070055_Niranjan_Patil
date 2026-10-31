@@ -1,0 +1,60 @@
+{
+ "knapsack_instances": 40,
+ "maxcut_graphs": 20,
+ "knapsack": {
+  "claude_chat": {
+   "greedy": {
+    "infeasible": 0,
+    "optimal": 25,
+    "mean_ms": 0.10412237500077026
+   },
+   "dp": {
+    "infeasible": 0,
+    "optimal": 40,
+    "mean_ms": 0.13272369999981493
+   },
+   "bnb": {
+    "infeasible": 0,
+    "optimal": 40,
+    "mean_ms": 0.15224027499876058
+   },
+   "ilp": {
+    "infeasible": 0,
+    "optimal": 40,
+    "mean_ms": 10.255081800001875
+   }
+  },
+  "antigravity": {
+   "greedy": {
+    "infeasible": 0,
+    "optimal": 25,
+    "mean_ms": 0.180499299999326
+   },
+   "dp": {
+    "infeasible": 0,
+    "optimal": 40,
+    "mean_ms": 0.1326733000006186
+   },
+   "bnb": {
+    "infeasible": 0,
+    "optimal": 40,
+    "mean_ms": 0.18319709999978784
+   },
+   "ilp": {
+    "infeasible": 0,
+    "optimal": 40,
+    "mean_ms": 9.96007742499998
+   }
+  }
+ },
+ "maxcut": {
+  "claude_chat": {
+   "qubo_min_equals_maxcut": 20,
+   "ising_identity_ok": 20.0
+  },
+  "antigravity": {
+   "qubo_min_equals_maxcut": 20,
+   "ising_identity_ok": 20
+  }
+ }
+}

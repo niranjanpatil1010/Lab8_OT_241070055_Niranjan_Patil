@@ -1,6 +1,6 @@
 # What to do before you submit (about 30 minutes)
 
-## 1. Put the raw chat exports in `prompts/exports/` (see the README there). Remove secrets (API keys, tokens, passwords).
+## 1. Chat exports: the pasted excerpts are already in `prompts/exports/`. Optional: add the full Antigravity chat (Tracks C, F, H, I) and the full claude.ai chat export there. Remove secrets first.
 ## 2. Fill the two things only you know
 - README → AI tools register: the exact model Antigravity used per track (it is recorded only approximately).
 - Check CHECKLIST.md against your class notes; add any topic your teacher taught that is missing.

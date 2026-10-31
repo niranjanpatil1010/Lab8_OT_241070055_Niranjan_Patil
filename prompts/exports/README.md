@@ -1,6 +1,7 @@
-# Raw chat exports (put the files here before pushing)
-The manual wants chat exports/screenshots from every tool. Copy the raw exports here (remove any secrets first):
-- `antigravity_chat.txt` — Antigravity session (Tracks B, C, D, F, H, I, first draft of J)
-- `claude_code_chat.txt` — Claude Code session (Track G, Track J rewrite, conftest, final report sections)
-- `claude_chat_tracks_A_E.txt` — claude.ai chat (Tracks A, E, final packaging)
-The per-track summaries in `prompts/<TRACK>/prompt_and_response.md` are written from these chats; the exports are the primary evidence.
+# Chat exports
+Saved here (text excerpts pasted by the student; wording as pasted):
+- `antigravity_chat_excerpt.txt` — Antigravity session: Track B and the start of Track D. The rest of the Antigravity chat (Tracks C, F, H, I, first draft of J) was not part of the pasted text.
+- `claude_code_and_second_account_chat_excerpt.txt` — Claude Code / second Claude account: Track G, Track J rewrite, final checks.
+- Claude (claude.ai) chat for Tracks A and E, D5/D6 and the tool comparison: summarised in `prompts/A`, `prompts/E`, README; the full chat can be exported from claude.ai (Settings → Export data) and dropped here as `claude_chat_tracks_A_E.txt`.
+
+TODO for the student, if you have them: add the full raw Antigravity chat for Tracks C, F, H, I as `antigravity_chat_full.txt` (remove any secrets first).

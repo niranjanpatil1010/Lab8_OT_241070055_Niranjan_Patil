@@ -1,5 +1,5 @@
 """Correctness tests: validator catches violations; B&B (own code) matches ILP on a tiny instance."""
-import sys; sys.path.insert(0, "../trackE")
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "trackE"))
 from data import generate
 from model import objective, validate
 import methods as M

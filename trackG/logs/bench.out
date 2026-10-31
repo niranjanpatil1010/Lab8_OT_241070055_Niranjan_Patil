@@ -1,0 +1,126 @@
+run 0 done
+run 1 done
+run 2 done
+run 3 done
+run 4 done
+run 5 done
+run 6 done
+run 7 done
+run 8 done
+run 9 done
+{
+ "rr": {
+  "fair8_jain_cputicks": {
+   "mean": 0.9984025559105432,
+   "std": 0.0,
+   "n": 10
+  },
+  "fair8_total_iters": {
+   "mean": 120864.0,
+   "std": 19048.275024264007,
+   "n": 10
+  },
+  "forkstorm_total_forks": {
+   "mean": 11259.7,
+   "std": 1825.2883635195838,
+   "n": 10
+  },
+  "pingpong_hog_iters": {
+   "mean": 115381.9,
+   "std": 28156.94006262044,
+   "n": 10
+  },
+  "pingpong_roundtrips": {
+   "mean": 24.0,
+   "std": 0.0,
+   "n": 10
+  },
+  "prop_L1_error_vs_tickets": {
+   "mean": 0.32666666666666666,
+   "std": 0.0,
+   "n": 10
+  },
+  "prop_share_t10": {
+   "mean": 0.33,
+   "std": 0.0,
+   "n": 10
+  },
+  "prop_share_t20": {
+   "mean": 0.33,
+   "std": 0.0,
+   "n": 10
+  },
+  "prop_share_t30": {
+   "mean": 0.33999999999999997,
+   "std": 5.551115123125783e-17,
+   "n": 10
+  },
+  "prop_total_iters": {
+   "mean": 117731.1,
+   "std": 24663.446727698058,
+   "n": 10
+  },
+  "solo_iters": {
+   "mean": 123848.6,
+   "std": 17872.20342990757,
+   "n": 10
+  }
+ },
+ "lottery": {
+  "fair8_jain_cputicks": {
+   "mean": 0.9388399354626336,
+   "std": 0.02260494582096431,
+   "n": 10
+  },
+  "fair8_total_iters": {
+   "mean": 121392.7,
+   "std": 18411.291307510182,
+   "n": 10
+  },
+  "forkstorm_total_forks": {
+   "mean": 10334.9,
+   "std": 1805.2995568603012,
+   "n": 10
+  },
+  "pingpong_hog_iters": {
+   "mean": 114927.0,
+   "std": 27008.062625816015,
+   "n": 10
+  },
+  "pingpong_roundtrips": {
+   "mean": 58.7,
+   "std": 6.1975801729384665,
+   "n": 10
+  },
+  "prop_L1_error_vs_tickets": {
+   "mean": 0.10866666666666665,
+   "std": 0.06073988255942986,
+   "n": 10
+  },
+  "prop_share_t10": {
+   "mean": 0.139,
+   "std": 0.02467792535850613,
+   "n": 10
+  },
+  "prop_share_t20": {
+   "mean": 0.345,
+   "std": 0.05536244214266563,
+   "n": 10
+  },
+  "prop_share_t30": {
+   "mean": 0.516,
+   "std": 0.038,
+   "n": 10
+  },
+  "prop_total_iters": {
+   "mean": 115472.4,
+   "std": 28007.100289747956,
+   "n": 10
+  },
+  "solo_iters": {
+   "mean": 122164.6,
+   "std": 18951.249469098337,
+   "n": 10
+  }
+ }
+}

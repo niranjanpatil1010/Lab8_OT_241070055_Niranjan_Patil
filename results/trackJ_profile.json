@@ -1,0 +1,1172 @@
+{
+ "loc_source": 3130,
+ "loc_by_file": {
+  "trackA/run.py": 129,
+  "trackB/run.py": 404,
+  "trackC/run.py": 350,
+  "trackD/run.py": 326,
+  "trackE/data.py": 30,
+  "trackE/methods.py": 145,
+  "trackE/model.py": 33,
+  "trackE/run.py": 39,
+  "trackF/compiler.py": 446,
+  "trackF/run.py": 154,
+  "trackG/run.py": 74,
+  "trackG/xv6run.py": 47,
+  "trackH/run.py": 313,
+  "trackI/run.py": 362,
+  "trackJ/profile_suite.py": 88,
+  "trackJ/run.py": 190
+ },
+ "repeats": 3,
+ "n_tests": 72,
+ "n_requirements_functions": 110,
+ "requirements": [
+  "trackB/run.py::_validate_cut",
+  "trackB/run.py::_validate_knapsack",
+  "trackB/run.py::_validate_sched",
+  "trackB/run.py::bnb",
+  "trackB/run.py::build_qubo_maxcut",
+  "trackB/run.py::cut_value",
+  "trackB/run.py::ising_energy_hJ",
+  "trackB/run.py::knapsack_bnb",
+  "trackB/run.py::knapsack_dp",
+  "trackB/run.py::knapsack_greedy",
+  "trackB/run.py::knapsack_ilp",
+  "trackB/run.py::maxcut_brute",
+  "trackB/run.py::maxcut_greedy",
+  "trackB/run.py::maxcut_sa",
+  "trackB/run.py::qubo_brute",
+  "trackB/run.py::qubo_energy",
+  "trackB/run.py::qubo_sa",
+  "trackB/run.py::qubo_to_ising",
+  "trackB/run.py::sched_dp",
+  "trackB/run.py::sched_greedy_eft",
+  "trackB/run.py::upper_bound",
+  "trackC/run.py::bp_circuit",
+  "trackC/run.py::circ_inf",
+  "trackC/run.py::circ_shot",
+  "trackC/run.py::circuit",
+  "trackC/run.py::make_qaoa_qnode",
+  "trackC/run.py::noisy_bell",
+  "trackC/run.py::prob_circuit",
+  "trackC/run.py::qaoa_layer",
+  "trackC/run.py::run_c1_qaoa",
+  "trackC/run.py::run_c2_vqe",
+  "trackC/run.py::run_c3_optimizers",
+  "trackC/run.py::run_c5_finite_shots",
+  "trackC/run.py::run_c6_hardware_noise",
+  "trackC/run.py::run_c7_barren_plateaus",
+  "trackC/run.py::vqe_circuit",
+  "trackD/run.py::brute_force_coverage",
+  "trackD/run.py::check_submodularity",
+  "trackD/run.py::coverage",
+  "trackD/run.py::cpu_task",
+  "trackD/run.py::fedavg",
+  "trackD/run.py::greedy_coverage",
+  "trackD/run.py::local_sgd",
+  "trackD/run.py::lpt_makespan",
+  "trackD/run.py::mgda_weights",
+  "trackD/run.py::mt_forward",
+  "trackD/run.py::mt_grads",
+  "trackD/run.py::simulate_work_stealing",
+  "trackD/run.py::train_mt",
+  "trackE/data.py::generate",
+  "trackE/methods.py::_can_place",
+  "trackE/methods.py::_partial",
+  "trackE/methods.py::_rooms",
+  "trackE/methods.py::branch_and_bound",
+  "trackE/methods.py::greedy",
+  "trackE/methods.py::ilp",
+  "trackE/methods.py::rec",
+  "trackE/methods.py::var",
+  "trackE/model.py::objective",
+  "trackE/model.py::validate",
+  "trackF/compiler.py::__init__",
+  "trackF/compiler.py::allocate_registers_ilp",
+  "trackF/compiler.py::consume",
+  "trackF/compiler.py::gen_expr",
+  "trackF/compiler.py::gen_stmt",
+  "trackF/compiler.py::generate",
+  "trackF/compiler.py::new_label",
+  "trackF/compiler.py::new_temp",
+  "trackF/compiler.py::optimize_all",
+  "trackF/compiler.py::parse",
+  "trackF/compiler.py::parse_expr",
+  "trackF/compiler.py::parse_factor",
+  "trackF/compiler.py::parse_statement",
+  "trackF/compiler.py::parse_term",
+  "trackF/compiler.py::pass_constant_folding",
+  "trackF/compiler.py::pass_cse",
+  "trackF/compiler.py::pass_dce",
+  "trackF/compiler.py::pass_licm",
+  "trackF/compiler.py::pass_strength_reduction",
+  "trackF/compiler.py::peek",
+  "trackF/compiler.py::run",
+  "trackF/compiler.py::tokenize",
+  "trackG/run.py::jain",
+  "trackG/run.py::metrics",
+  "trackG/run.py::parse",
+  "trackH/run.py::execute_workload",
+  "trackH/run.py::get_explain_plan",
+  "trackH/run.py::index_selection_dp",
+  "trackH/run.py::index_selection_ilp",
+  "trackI/run.py::annealing_circuit",
+  "trackI/run.py::bv_circuit",
+  "trackI/run.py::circuit",
+  "trackI/run.py::diffuser",
+  "trackI/run.py::dj_circuit",
+  "trackI/run.py::grover_circuit",
+  "trackI/run.py::hand_written_qft",
+  "trackI/run.py::kernel_eval",
+  "trackI/run.py::noisy_bv",
+  "trackI/run.py::oracle",
+  "trackI/run.py::qft_unitary_circuit",
+  "trackI/run.py::qpe_circuit",
+  "trackI/run.py::run_i1_deutsch_jozsa",
+  "trackI/run.py::run_i2_bernstein_vazirani",
+  "trackI/run.py::run_i3_grover_vs_linear",
+  "trackI/run.py::run_i4_qft",
+  "trackI/run.py::run_i5_qpe",
+  "trackI/run.py::run_i6_shor",
+  "trackI/run.py::run_i7_quantum_annealing",
+  "trackI/run.py::run_i8_noise_model",
+  "trackI/run.py::run_i9_quantum_kernel_vs_classical"
+ ],
+ "tests": [
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_all_methods_agree_on_larger_instance",
+   "median_s": 0.006,
+   "runs_s": [
+    0.006,
+    0.006,
+    0.006
+   ],
+   "functions": [
+    "trackB/run.py::bnb",
+    "trackB/run.py::knapsack_bnb",
+    "trackB/run.py::knapsack_dp",
+    "trackB/run.py::knapsack_ilp",
+    "trackB/run.py::upper_bound"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_bnb_matches_dp",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.001
+   ],
+   "functions": [
+    "trackB/run.py::bnb",
+    "trackB/run.py::knapsack_bnb",
+    "trackB/run.py::knapsack_dp",
+    "trackB/run.py::upper_bound"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_dp_exact_small",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.001
+   ],
+   "functions": [
+    "trackB/run.py::knapsack_dp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_dp_single_item",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::knapsack_dp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_dp_zero_capacity",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::knapsack_dp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_greedy_cannot_exceed_optimal",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::_validate_knapsack",
+    "trackB/run.py::knapsack_dp",
+    "trackB/run.py::knapsack_greedy"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_greedy_feasible",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::_validate_knapsack",
+    "trackB/run.py::knapsack_greedy"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestKnapsack::test_ilp_matches_dp",
+   "median_s": 0.002,
+   "runs_s": [
+    0.002,
+    0.002,
+    0.002
+   ],
+   "functions": [
+    "trackB/run.py::knapsack_dp",
+    "trackB/run.py::knapsack_ilp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestMaxCut::test_brute_force_triangle",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::cut_value",
+    "trackB/run.py::maxcut_brute"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestMaxCut::test_cut_symmetry",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::_validate_cut",
+    "trackB/run.py::cut_value"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestMaxCut::test_cut_value_empty",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.001,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::cut_value"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestMaxCut::test_cut_value_manual",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::cut_value"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestMaxCut::test_greedy_feasible",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::maxcut_greedy"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestMaxCut::test_sa_matches_brute_on_triangle",
+   "median_s": 0.017,
+   "runs_s": [
+    0.017,
+    0.018,
+    0.017
+   ],
+   "functions": [
+    "trackB/run.py::cut_value",
+    "trackB/run.py::maxcut_brute",
+    "trackB/run.py::maxcut_sa"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestQUBO::test_ising_conversion_consistent",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.001
+   ],
+   "functions": [
+    "trackB/run.py::build_qubo_maxcut",
+    "trackB/run.py::ising_energy_hJ",
+    "trackB/run.py::qubo_energy",
+    "trackB/run.py::qubo_to_ising"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestQUBO::test_penalty_forces_cardinality",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::build_qubo_maxcut",
+    "trackB/run.py::qubo_brute",
+    "trackB/run.py::qubo_energy"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestQUBO::test_qubo_brute_matches_brute_cut_on_7node",
+   "median_s": 0.003,
+   "runs_s": [
+    0.003,
+    0.003,
+    0.003
+   ],
+   "functions": [
+    "trackB/run.py::build_qubo_maxcut",
+    "trackB/run.py::cut_value",
+    "trackB/run.py::maxcut_brute",
+    "trackB/run.py::qubo_brute",
+    "trackB/run.py::qubo_energy"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestQUBO::test_qubo_energy_match_cut",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::build_qubo_maxcut",
+    "trackB/run.py::cut_value",
+    "trackB/run.py::maxcut_brute",
+    "trackB/run.py::qubo_brute",
+    "trackB/run.py::qubo_energy"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestQUBO::test_qubo_sa_feasible",
+   "median_s": 0.004,
+   "runs_s": [
+    0.004,
+    0.004,
+    0.004
+   ],
+   "functions": [
+    "trackB/run.py::build_qubo_maxcut",
+    "trackB/run.py::qubo_energy",
+    "trackB/run.py::qubo_sa"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestScheduling::test_dp_cannot_exceed_total_weight",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::sched_dp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestScheduling::test_dp_feasible",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::_validate_sched",
+    "trackB/run.py::sched_dp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestScheduling::test_dp_known_optimum",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::sched_dp"
+   ]
+  },
+  {
+   "id": "tests/test_trackB.py::TestScheduling::test_greedy_feasible",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackB/run.py::_validate_sched",
+    "trackB/run.py::sched_greedy_eft"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCBarrenPlateaus::test_gradient_variance_monotonic_decay",
+   "median_s": 3.907,
+   "runs_s": [
+    3.907,
+    4.214,
+    3.888
+   ],
+   "functions": [
+    "trackC/run.py::bp_circuit",
+    "trackC/run.py::run_c7_barren_plateaus"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCFiniteShotsAndNoise::test_hardware_noise_degrades_fidelity",
+   "median_s": 0.01,
+   "runs_s": [
+    0.01,
+    0.01,
+    0.01
+   ],
+   "functions": [
+    "trackC/run.py::noisy_bell",
+    "trackC/run.py::run_c6_hardware_noise"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCFiniteShotsAndNoise::test_shot_noise_variance_decreases",
+   "median_s": 0.059,
+   "runs_s": [
+    0.06,
+    0.059,
+    0.055
+   ],
+   "functions": [
+    "trackC/run.py::circ_inf",
+    "trackC/run.py::circ_shot",
+    "trackC/run.py::run_c5_finite_shots"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCOptimizers::test_optimizers_converge_towards_minimum",
+   "median_s": 0.787,
+   "runs_s": [
+    0.766,
+    0.787,
+    0.803
+   ],
+   "functions": [
+    "trackC/run.py::circuit",
+    "trackC/run.py::run_c3_optimizers"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCQAOA::test_qaoa_classical_comparison",
+   "median_s": 1.719,
+   "runs_s": [
+    1.674,
+    1.881,
+    1.719
+   ],
+   "functions": [
+    "trackC/run.py::circuit",
+    "trackC/run.py::make_qaoa_qnode",
+    "trackC/run.py::prob_circuit",
+    "trackC/run.py::qaoa_layer",
+    "trackC/run.py::run_c1_qaoa"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCQAOA::test_qaoa_structure_and_bounds",
+   "median_s": 1.733,
+   "runs_s": [
+    1.811,
+    1.662,
+    1.733
+   ],
+   "functions": [
+    "trackC/run.py::circuit",
+    "trackC/run.py::make_qaoa_qnode",
+    "trackC/run.py::prob_circuit",
+    "trackC/run.py::qaoa_layer",
+    "trackC/run.py::run_c1_qaoa"
+   ]
+  },
+  {
+   "id": "tests/test_trackC.py::TestTrackCVQE::test_vqe_approaches_exact_ground_state",
+   "median_s": 0.68,
+   "runs_s": [
+    0.587,
+    0.682,
+    0.68
+   ],
+   "functions": [
+    "trackC/run.py::run_c2_vqe",
+    "trackC/run.py::vqe_circuit"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestDistributedFedAvg::test_fedavg_convergence",
+   "median_s": 0.004,
+   "runs_s": [
+    0.004,
+    0.004,
+    0.004
+   ],
+   "functions": [
+    "trackD/run.py::fedavg",
+    "trackD/run.py::local_sgd"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestDistributedFedAvg::test_local_sgd_step",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.001,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::local_sgd"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestMultiTaskOptimization::test_mgda_analytical_weights",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::mgda_weights"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestMultiTaskOptimization::test_mgda_collinear_opposite",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::mgda_weights"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestMultiTaskOptimization::test_train_mt_reproducibility",
+   "median_s": 0.013,
+   "runs_s": [
+    0.013,
+    0.012,
+    0.013
+   ],
+   "functions": [
+    "trackD/run.py::mt_forward",
+    "trackD/run.py::mt_grads",
+    "trackD/run.py::train_mt"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestParallelScheduling::test_cpu_task_exact_output",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::cpu_task"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestParallelScheduling::test_lpt_makespan_bound",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::lpt_makespan"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestParallelScheduling::test_work_stealing_feasible",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::simulate_work_stealing"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestSubmodularCoverage::test_coverage_empty",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::coverage"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestSubmodularCoverage::test_coverage_monotone",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackD/run.py::coverage"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestSubmodularCoverage::test_greedy_within_guarantee",
+   "median_s": 0.005,
+   "runs_s": [
+    0.005,
+    0.005,
+    0.005
+   ],
+   "functions": [
+    "trackD/run.py::brute_force_coverage",
+    "trackD/run.py::coverage",
+    "trackD/run.py::greedy_coverage"
+   ]
+  },
+  {
+   "id": "tests/test_trackD.py::TestSubmodularCoverage::test_submodularity_diminishing_returns",
+   "median_s": 0.012,
+   "runs_s": [
+    0.012,
+    0.011,
+    0.013
+   ],
+   "functions": [
+    "trackD/run.py::check_submodularity",
+    "trackD/run.py::coverage"
+   ]
+  },
+  {
+   "id": "tests/test_trackE.py::test_bnb_equals_ilp_tiny",
+   "median_s": 1.242,
+   "runs_s": [
+    1.247,
+    1.186,
+    1.242
+   ],
+   "functions": [
+    "trackE/data.py::generate",
+    "trackE/methods.py::_can_place",
+    "trackE/methods.py::_partial",
+    "trackE/methods.py::_rooms",
+    "trackE/methods.py::branch_and_bound",
+    "trackE/methods.py::greedy",
+    "trackE/methods.py::ilp",
+    "trackE/methods.py::rec",
+    "trackE/methods.py::var",
+    "trackE/model.py::objective",
+    "trackE/model.py::validate"
+   ]
+  },
+  {
+   "id": "tests/test_trackE.py::test_greedy_feasible",
+   "median_s": 0.003,
+   "runs_s": [
+    0.003,
+    0.003,
+    0.003
+   ],
+   "functions": [
+    "trackE/data.py::generate",
+    "trackE/methods.py::_can_place",
+    "trackE/methods.py::_rooms",
+    "trackE/methods.py::greedy",
+    "trackE/model.py::validate"
+   ]
+  },
+  {
+   "id": "tests/test_trackE.py::test_validator_catches_clash",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.002,
+    0.001
+   ],
+   "functions": [
+    "trackE/data.py::generate",
+    "trackE/model.py::validate"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_constant_folding",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::gen_expr",
+    "trackF/compiler.py::gen_stmt",
+    "trackF/compiler.py::generate",
+    "trackF/compiler.py::new_temp",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::pass_constant_folding",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::run",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_cse_elimination",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::gen_expr",
+    "trackF/compiler.py::gen_stmt",
+    "trackF/compiler.py::generate",
+    "trackF/compiler.py::new_temp",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::pass_cse",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::run",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_dce_elimination",
+   "median_s": 0.0,
+   "runs_s": [
+    0.003,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::gen_expr",
+    "trackF/compiler.py::gen_stmt",
+    "trackF/compiler.py::generate",
+    "trackF/compiler.py::new_temp",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::pass_dce",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_lexer_and_parser",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.001
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_optimizer_preserves_program_semantics",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.0
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::gen_expr",
+    "trackF/compiler.py::gen_stmt",
+    "trackF/compiler.py::generate",
+    "trackF/compiler.py::new_label",
+    "trackF/compiler.py::new_temp",
+    "trackF/compiler.py::optimize_all",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::pass_constant_folding",
+    "trackF/compiler.py::pass_cse",
+    "trackF/compiler.py::pass_dce",
+    "trackF/compiler.py::pass_licm",
+    "trackF/compiler.py::pass_strength_reduction",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::run",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_register_allocation_ilp_validity_and_optimality",
+   "median_s": 0.007,
+   "runs_s": [
+    0.009,
+    0.007,
+    0.006
+   ],
+   "functions": [
+    "trackF/compiler.py::allocate_registers_ilp"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_strength_reduction",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::gen_expr",
+    "trackF/compiler.py::gen_stmt",
+    "trackF/compiler.py::generate",
+    "trackF/compiler.py::new_temp",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::pass_strength_reduction",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::run",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackF.py::TestTrackFCompiler::test_unoptimized_execution",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackF/compiler.py::__init__",
+    "trackF/compiler.py::consume",
+    "trackF/compiler.py::gen_expr",
+    "trackF/compiler.py::gen_stmt",
+    "trackF/compiler.py::generate",
+    "trackF/compiler.py::new_temp",
+    "trackF/compiler.py::parse",
+    "trackF/compiler.py::parse_expr",
+    "trackF/compiler.py::parse_factor",
+    "trackF/compiler.py::parse_statement",
+    "trackF/compiler.py::parse_term",
+    "trackF/compiler.py::peek",
+    "trackF/compiler.py::run",
+    "trackF/compiler.py::tokenize"
+   ]
+  },
+  {
+   "id": "tests/test_trackG.py::test_jain_bounds",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackG/run.py::jain"
+   ]
+  },
+  {
+   "id": "tests/test_trackG.py::test_kernel_prng_replica_matches_ticket_ratio",
+   "median_s": 0.023,
+   "runs_s": [
+    0.026,
+    0.023,
+    0.022
+   ],
+   "functions": []
+  },
+  {
+   "id": "tests/test_trackG.py::test_parse_and_prop_metrics",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.0
+   ],
+   "functions": [
+    "trackG/run.py::metrics",
+    "trackG/run.py::parse"
+   ]
+  },
+  {
+   "id": "tests/test_trackG.py::test_patch_applies_to_pristine_xv6",
+   "median_s": 0.003,
+   "runs_s": [
+    0.005,
+    0.003,
+    0.003
+   ],
+   "functions": []
+  },
+  {
+   "id": "tests/test_trackG.py::test_patch_present_and_touches_scheduler",
+   "median_s": 0.0,
+   "runs_s": [
+    0.001,
+    0.0,
+    0.0
+   ],
+   "functions": []
+  },
+  {
+   "id": "tests/test_trackH.py::TestTrackHDBMS::test_database_creation_and_integrity",
+   "median_s": 1.622,
+   "runs_s": [
+    1.713,
+    1.622,
+    1.603
+   ],
+   "functions": []
+  },
+  {
+   "id": "tests/test_trackH.py::TestTrackHDBMS::test_explain_plan_generation",
+   "median_s": 0.001,
+   "runs_s": [
+    0.001,
+    0.001,
+    0.001
+   ],
+   "functions": [
+    "trackH/run.py::get_explain_plan"
+   ]
+  },
+  {
+   "id": "tests/test_trackH.py::TestTrackHDBMS::test_index_selection_knapsack_algorithms_agree",
+   "median_s": 0.009,
+   "runs_s": [
+    0.009,
+    0.009,
+    0.009
+   ],
+   "functions": [
+    "trackH/run.py::index_selection_dp",
+    "trackH/run.py::index_selection_ilp"
+   ]
+  },
+  {
+   "id": "tests/test_trackH.py::TestTrackHDBMS::test_query_results_strictly_identical_after_index",
+   "median_s": 0.129,
+   "runs_s": [
+    0.129,
+    0.129,
+    0.139
+   ],
+   "functions": [
+    "trackH/run.py::execute_workload"
+   ]
+  },
+  {
+   "id": "tests/test_trackH.py::TestTrackHDBMS::test_query_workload_execution",
+   "median_s": 0.117,
+   "runs_s": [
+    0.121,
+    0.117,
+    0.117
+   ],
+   "functions": [
+    "trackH/run.py::execute_workload"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_bernstein_vazirani_recovery",
+   "median_s": 0.002,
+   "runs_s": [
+    0.002,
+    0.002,
+    0.002
+   ],
+   "functions": [
+    "trackI/run.py::bv_circuit",
+    "trackI/run.py::run_i2_bernstein_vazirani"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_deutsch_jozsa_distinction",
+   "median_s": 0.003,
+   "runs_s": [
+    0.003,
+    0.003,
+    0.003
+   ],
+   "functions": [
+    "trackI/run.py::circuit",
+    "trackI/run.py::dj_circuit",
+    "trackI/run.py::run_i1_deutsch_jozsa"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_grover_vs_linear_query_advantage",
+   "median_s": 0.021,
+   "runs_s": [
+    0.021,
+    0.022,
+    0.021
+   ],
+   "functions": [
+    "trackI/run.py::diffuser",
+    "trackI/run.py::grover_circuit",
+    "trackI/run.py::oracle",
+    "trackI/run.py::run_i3_grover_vs_linear"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_hardware_noise_reduces_bv_fidelity",
+   "median_s": 0.014,
+   "runs_s": [
+    0.016,
+    0.013,
+    0.014
+   ],
+   "functions": [
+    "trackI/run.py::noisy_bv",
+    "trackI/run.py::run_i8_noise_model"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_qft_unitary_match",
+   "median_s": 0.003,
+   "runs_s": [
+    0.003,
+    0.003,
+    0.003
+   ],
+   "functions": [
+    "trackI/run.py::hand_written_qft",
+    "trackI/run.py::qft_unitary_circuit",
+    "trackI/run.py::run_i4_qft"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_qpe_exact_phase_recovery",
+   "median_s": 0.004,
+   "runs_s": [
+    0.004,
+    0.004,
+    0.004
+   ],
+   "functions": [
+    "trackI/run.py::qpe_circuit",
+    "trackI/run.py::run_i5_qpe"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_quantum_annealing_ground_state",
+   "median_s": 0.02,
+   "runs_s": [
+    0.024,
+    0.02,
+    0.019
+   ],
+   "functions": [
+    "trackI/run.py::annealing_circuit",
+    "trackI/run.py::run_i7_quantum_annealing"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_quantum_kernel_feasibility",
+   "median_s": 1.016,
+   "runs_s": [
+    1.054,
+    0.962,
+    1.016
+   ],
+   "functions": [
+    "trackI/run.py::kernel_eval",
+    "trackI/run.py::run_i9_quantum_kernel_vs_classical"
+   ]
+  },
+  {
+   "id": "tests/test_trackI.py::TestTrackIAlgorithms::test_shor_factoring_correctness",
+   "median_s": 0.0,
+   "runs_s": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "functions": [
+    "trackI/run.py::run_i6_shor"
+   ]
+  }
+ ],
+ "suite_total_s": 13.207
+}

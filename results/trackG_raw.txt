@@ -1,0 +1,640 @@
+##### kernel=rr run=0 seed=1 dur=100
+schedbench prop 100 1
+RESULT wl=prop role=1 pid=5 tickets=20 iters=27104 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=26702 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=27429 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 1
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=18417 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=19242 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=20091 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=19744 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 1
+RESULT wl=fair role=4 pid=19 tickets=10 iters=10322 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=9300 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=9209 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=11279 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=12823 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=9783 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=11097 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=11503 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 1
+RESULT wl=solo role=0 pid=24 tickets=10 iters=89004 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 1
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=1971 cputicks=22 sched=1992
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=1971 cputicks=17 sched=1989
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=1965 cputicks=25 sched=1991
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=1971 cputicks=20 sched=1992
+$ 
+##### kernel=lottery run=0 seed=1 dur=100
+schedbench prop 100 1
+RESULT wl=prop role=1 pid=5 tickets=20 iters=25478 cputicks=31 sched=32
+RESULT wl=prop role=0 pid=4 tickets=30 iters=47194 cputicks=54 sched=55
+RESULT wl=prop role=2 pid=6 tickets=10 iters=11871 cputicks=15 sched=16
+$ 
+schedbench pingpong 100 1
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=19442 cputicks=23 sched=24
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=60 cputicks=0 sched=61
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=25651 cputicks=30 sched=31
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=11071 cputicks=15 sched=16
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=30079 cputicks=32 sched=33
+$ 
+schedbench fair 8 100 1
+RESULT wl=fair role=6 pid=21 tickets=10 iters=12005 cputicks=14 sched=15
+RESULT wl=fair role=3 pid=18 tickets=10 iters=12807 cputicks=14 sched=15
+RESULT wl=fair role=5 pid=20 tickets=10 iters=8704 cputicks=10 sched=11
+RESULT wl=fair role=7 pid=22 tickets=10 iters=6932 cputicks=9 sched=10
+RESULT wl=fair role=1 pid=16 tickets=10 iters=11239 cputicks=13 sched=14
+RESULT wl=fair role=0 pid=15 tickets=10 iters=8357 cputicks=10 sched=11
+RESULT wl=fair role=2 pid=17 tickets=10 iters=14808 cputicks=17 sched=18
+RESULT wl=fair role=4 pid=19 tickets=10 iters=8561 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 1
+RESULT wl=solo role=0 pid=24 tickets=10 iters=87170 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 1
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=1714 cputicks=23 sched=1738
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=1737 cputicks=19 sched=1757
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=1711 cputicks=27 sched=1739
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=1691 cputicks=17 sched=1709
+$ 
+##### kernel=rr run=1 seed=2 dur=100
+schedbench prop 100 2
+RESULT wl=prop role=1 pid=5 tickets=20 iters=23650 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=23357 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=22560 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 2
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=17680 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=18311 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=19256 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=18093 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 2
+RESULT wl=fair role=4 pid=19 tickets=10 iters=10217 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=10827 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=10336 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=10720 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=10541 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=9490 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=10030 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=11402 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 2
+RESULT wl=solo role=0 pid=24 tickets=10 iters=87564 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 2
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=1862 cputicks=20 sched=1882
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=1853 cputicks=26 sched=1880
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=1857 cputicks=21 sched=1879
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=1864 cputicks=17 sched=1882
+$ 
+##### kernel=lottery run=1 seed=2 dur=100
+schedbench prop 100 2
+RESULT wl=prop role=0 pid=4 tickets=30 iters=32015 cputicks=50 sched=51
+RESULT wl=prop role=2 pid=6 tickets=10 iters=8244 cputicks=14 sched=15
+RESULT wl=prop role=1 pid=5 tickets=20 iters=23969 cputicks=36 sched=37
+$ 
+schedbench pingpong 100 2
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=21327 cputicks=29 sched=30
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=57 cputicks=0 sched=58
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=13793 cputicks=23 sched=24
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=16147 cputicks=22 sched=23
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=16887 cputicks=26 sched=27
+$ 
+schedbench fair 8 100 2
+RESULT wl=fair role=6 pid=21 tickets=10 iters=8936 cputicks=9 sched=10
+RESULT wl=fair role=7 pid=22 tickets=10 iters=9292 cputicks=11 sched=12
+RESULT wl=fair role=4 pid=19 tickets=10 iters=11352 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=5793 cputicks=8 sched=9
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17016 cputicks=19 sched=20
+RESULT wl=fair role=3 pid=18 tickets=10 iters=16375 cputicks=18 sched=19
+RESULT wl=fair role=5 pid=20 tickets=10 iters=12765 cputicks=13 sched=14
+RESULT wl=fair role=0 pid=15 tickets=10 iters=8122 cputicks=9 sched=10
+$ 
+schedbench fair 1 100 2
+RESULT wl=solo role=0 pid=24 tickets=10 iters=82078 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 2
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=1698 cputicks=18 sched=1717
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=1602 cputicks=22 sched=1625
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=1698 cputicks=23 sched=1722
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=1731 cputicks=25 sched=1755
+$ 
+##### kernel=rr run=2 seed=3 dur=100
+schedbench prop 100 3
+RESULT wl=prop role=1 pid=5 tickets=20 iters=30964 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=31426 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=29831 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 3
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=16853 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=17240 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=17470 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=15544 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 3
+RESULT wl=fair role=4 pid=19 tickets=10 iters=14139 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=14084 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=14205 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=14520 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=14194 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=13761 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=14581 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=14895 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 3
+RESULT wl=solo role=0 pid=24 tickets=10 iters=130851 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 3
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2956 cputicks=21 sched=2977
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2958 cputicks=18 sched=2977
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2964 cputicks=15 sched=2978
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2946 cputicks=31 sched=2977
+$ 
+##### kernel=lottery run=2 seed=3 dur=100
+schedbench prop 100 3
+RESULT wl=prop role=1 pid=5 tickets=20 iters=32751 cputicks=41 sched=42
+RESULT wl=prop role=0 pid=4 tickets=30 iters=29855 cputicks=46 sched=47
+RESULT wl=prop role=2 pid=6 tickets=10 iters=8714 cputicks=13 sched=14
+$ 
+schedbench pingpong 100 3
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=45 cputicks=0 sched=46
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=13643 cputicks=19 sched=20
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=20825 cputicks=30 sched=31
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=18020 cputicks=27 sched=28
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=16808 cputicks=24 sched=25
+$ 
+schedbench fair 8 100 3
+RESULT wl=fair role=6 pid=21 tickets=10 iters=14396 cputicks=15 sched=16
+RESULT wl=fair role=2 pid=17 tickets=10 iters=11161 cputicks=9 sched=10
+RESULT wl=fair role=0 pid=15 tickets=10 iters=11662 cputicks=11 sched=12
+RESULT wl=fair role=3 pid=18 tickets=10 iters=17534 cputicks=15 sched=16
+RESULT wl=fair role=5 pid=20 tickets=10 iters=11376 cputicks=9 sched=10
+RESULT wl=fair role=7 pid=22 tickets=10 iters=15997 cputicks=14 sched=15
+RESULT wl=fair role=1 pid=16 tickets=10 iters=13407 cputicks=12 sched=13
+RESULT wl=fair role=4 pid=19 tickets=10 iters=18513 cputicks=15 sched=16
+$ 
+schedbench fair 1 100 3
+RESULT wl=solo role=0 pid=24 tickets=10 iters=128475 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 3
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2617 cputicks=18 sched=2636
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2526 cputicks=19 sched=2545
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2584 cputicks=25 sched=2610
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2543 cputicks=19 sched=2563
+$ 
+##### kernel=rr run=3 seed=4 dur=100
+schedbench prop 100 4
+RESULT wl=prop role=1 pid=5 tickets=20 iters=43364 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=43411 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=43971 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 4
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=32109 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=31819 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=31507 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=32163 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 4
+RESULT wl=fair role=4 pid=19 tickets=10 iters=16159 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=15437 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=15441 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=15864 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=17054 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=17610 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17899 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=17558 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 4
+RESULT wl=solo role=0 pid=24 tickets=10 iters=135496 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 4
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2986 cputicks=22 sched=3009
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2988 cputicks=18 sched=3007
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2988 cputicks=18 sched=3006
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2981 cputicks=28 sched=3010
+$ 
+##### kernel=lottery run=3 seed=4 dur=100
+schedbench prop 100 4
+RESULT wl=prop role=0 pid=4 tickets=30 iters=71584 cputicks=54 sched=55
+RESULT wl=prop role=2 pid=6 tickets=10 iters=13676 cputicks=10 sched=11
+RESULT wl=prop role=1 pid=5 tickets=20 iters=47424 cputicks=36 sched=37
+$ 
+schedbench pingpong 100 4
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=28243 cputicks=23 sched=24
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=30005 cputicks=24 sched=25
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=70 cputicks=0 sched=71
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=29322 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=35669 cputicks=28 sched=29
+$ 
+schedbench fair 8 100 4
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17999 cputicks=14 sched=15
+RESULT wl=fair role=0 pid=15 tickets=10 iters=11570 cputicks=9 sched=10
+RESULT wl=fair role=7 pid=22 tickets=10 iters=15451 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=13992 cputicks=11 sched=12
+RESULT wl=fair role=3 pid=18 tickets=10 iters=18452 cputicks=14 sched=15
+RESULT wl=fair role=4 pid=19 tickets=10 iters=21044 cputicks=16 sched=17
+RESULT wl=fair role=5 pid=20 tickets=10 iters=16561 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=15114 cputicks=11 sched=12
+$ 
+schedbench fair 1 100 4
+RESULT wl=solo role=0 pid=24 tickets=10 iters=131131 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 4
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2816 cputicks=15 sched=2831
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2874 cputicks=26 sched=2901
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2827 cputicks=12 sched=2840
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2841 cputicks=27 sched=2868
+$ 
+##### kernel=rr run=4 seed=5 dur=100
+schedbench prop 100 5
+RESULT wl=prop role=1 pid=5 tickets=20 iters=44552 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=45261 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=46134 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 5
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=32862 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=33623 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=33989 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=33429 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 5
+RESULT wl=fair role=4 pid=19 tickets=10 iters=14751 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=15553 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=15602 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=15270 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=16907 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=16845 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17021 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=16218 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 5
+RESULT wl=solo role=0 pid=24 tickets=10 iters=135437 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 5
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=3198 cputicks=21 sched=3220
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=3200 cputicks=18 sched=3219
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=3195 cputicks=22 sched=3217
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=3195 cputicks=23 sched=3219
+$ 
+##### kernel=lottery run=4 seed=5 dur=100
+schedbench prop 100 5
+RESULT wl=prop role=0 pid=4 tickets=30 iters=73630 cputicks=54 sched=55
+RESULT wl=prop role=1 pid=5 tickets=20 iters=38283 cputicks=31 sched=32
+RESULT wl=prop role=2 pid=6 tickets=10 iters=19606 cputicks=15 sched=16
+$ 
+schedbench pingpong 100 5
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=20341 cputicks=15 sched=16
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=54 cputicks=0 sched=55
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=41096 cputicks=31 sched=32
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=42396 cputicks=31 sched=32
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=29908 cputicks=23 sched=24
+$ 
+schedbench fair 8 100 5
+RESULT wl=fair role=2 pid=17 tickets=10 iters=11363 cputicks=9 sched=10
+RESULT wl=fair role=1 pid=16 tickets=10 iters=19136 cputicks=14 sched=15
+RESULT wl=fair role=0 pid=15 tickets=10 iters=13036 cputicks=11 sched=12
+RESULT wl=fair role=3 pid=18 tickets=10 iters=18552 cputicks=14 sched=15
+RESULT wl=fair role=6 pid=21 tickets=10 iters=18719 cputicks=14 sched=15
+RESULT wl=fair role=5 pid=20 tickets=10 iters=14871 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=11121 cputicks=9 sched=10
+RESULT wl=fair role=4 pid=19 tickets=10 iters=21942 cputicks=17 sched=18
+$ 
+schedbench fair 1 100 5
+RESULT wl=solo role=0 pid=24 tickets=10 iters=134706 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 5
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2819 cputicks=25 sched=2845
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2827 cputicks=14 sched=2841
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2867 cputicks=23 sched=2891
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2847 cputicks=20 sched=2867
+$ 
+##### kernel=rr run=5 seed=6 dur=100
+schedbench prop 100 6
+RESULT wl=prop role=1 pid=5 tickets=20 iters=44325 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=43373 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=44828 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 6
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=33596 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=33973 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=33545 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=33473 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 6
+RESULT wl=fair role=4 pid=19 tickets=10 iters=16363 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=16547 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=16919 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=16877 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=17099 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=17381 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=16962 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=17447 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 6
+RESULT wl=solo role=0 pid=24 tickets=10 iters=130009 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 6
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=3052 cputicks=16 sched=3069
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=3048 cputicks=20 sched=3068
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=3044 cputicks=24 sched=3069
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=3049 cputicks=27 sched=3075
+$ 
+##### kernel=lottery run=5 seed=6 dur=100
+schedbench prop 100 6
+RESULT wl=prop role=0 pid=4 tickets=30 iters=81957 cputicks=59 sched=60
+RESULT wl=prop role=1 pid=5 tickets=20 iters=30045 cputicks=22 sched=23
+RESULT wl=prop role=2 pid=6 tickets=10 iters=23731 cputicks=19 sched=20
+$ 
+schedbench pingpong 100 6
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=24773 cputicks=19 sched=20
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=30834 cputicks=23 sched=24
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=64 cputicks=0 sched=65
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=29864 cputicks=22 sched=23
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=47311 cputicks=36 sched=37
+$ 
+schedbench fair 8 100 6
+RESULT wl=fair role=4 pid=19 tickets=10 iters=6875 cputicks=5 sched=6
+RESULT wl=fair role=5 pid=20 tickets=10 iters=19878 cputicks=15 sched=16
+RESULT wl=fair role=7 pid=22 tickets=10 iters=17900 cputicks=13 sched=14
+RESULT wl=fair role=6 pid=21 tickets=10 iters=12081 cputicks=9 sched=10
+RESULT wl=fair role=1 pid=16 tickets=10 iters=17399 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=20466 cputicks=15 sched=16
+RESULT wl=fair role=0 pid=15 tickets=10 iters=21070 cputicks=16 sched=17
+RESULT wl=fair role=2 pid=17 tickets=10 iters=18644 cputicks=14 sched=15
+$ 
+schedbench fair 1 100 6
+RESULT wl=solo role=0 pid=24 tickets=10 iters=130847 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 6
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2831 cputicks=21 sched=2852
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2956 cputicks=14 sched=2971
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2947 cputicks=29 sched=2977
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2944 cputicks=14 sched=2957
+$ 
+##### kernel=rr run=6 seed=7 dur=100
+schedbench prop 100 7
+RESULT wl=prop role=1 pid=5 tickets=20 iters=43893 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=43741 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=44856 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 7
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=33869 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=34194 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=33578 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=34130 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 7
+RESULT wl=fair role=4 pid=19 tickets=10 iters=16234 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=16541 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=16523 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=16149 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=16253 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=16918 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17452 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=17303 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 7
+RESULT wl=solo role=0 pid=24 tickets=10 iters=132277 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 7
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=3085 cputicks=24 sched=3109
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=3089 cputicks=19 sched=3109
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=3091 cputicks=19 sched=3109
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=3084 cputicks=21 sched=3106
+$ 
+##### kernel=lottery run=6 seed=7 dur=100
+schedbench prop 100 7
+RESULT wl=prop role=0 pid=4 tickets=30 iters=59294 cputicks=46 sched=47
+RESULT wl=prop role=1 pid=5 tickets=20 iters=56585 cputicks=42 sched=43
+RESULT wl=prop role=2 pid=6 tickets=10 iters=16202 cputicks=12 sched=13
+$ 
+schedbench pingpong 100 7
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=26897 cputicks=20 sched=21
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=61 cputicks=0 sched=62
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=29288 cputicks=22 sched=23
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=39234 cputicks=30 sched=31
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=36880 cputicks=28 sched=29
+$ 
+schedbench fair 8 100 7
+RESULT wl=fair role=0 pid=15 tickets=10 iters=24826 cputicks=18 sched=19
+RESULT wl=fair role=7 pid=22 tickets=10 iters=17357 cputicks=13 sched=14
+RESULT wl=fair role=6 pid=21 tickets=10 iters=17586 cputicks=13 sched=14
+RESULT wl=fair role=5 pid=20 tickets=10 iters=6743 cputicks=5 sched=6
+RESULT wl=fair role=2 pid=17 tickets=10 iters=19863 cputicks=15 sched=16
+RESULT wl=fair role=1 pid=16 tickets=10 iters=12129 cputicks=9 sched=10
+RESULT wl=fair role=4 pid=19 tickets=10 iters=18021 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=18439 cputicks=14 sched=15
+$ 
+schedbench fair 1 100 7
+RESULT wl=solo role=0 pid=24 tickets=10 iters=133556 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 7
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2779 cputicks=20 sched=2799
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2876 cputicks=25 sched=2902
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2837 cputicks=17 sched=2855
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2827 cputicks=21 sched=2849
+$ 
+##### kernel=rr run=7 seed=8 dur=100
+schedbench prop 100 8
+RESULT wl=prop role=1 pid=5 tickets=20 iters=44865 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=44899 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=46846 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 8
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=33382 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=34475 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=33972 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=33214 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 8
+RESULT wl=fair role=4 pid=19 tickets=10 iters=16032 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=16181 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=16191 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=16055 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=17207 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=17017 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17153 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=16648 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 8
+RESULT wl=solo role=0 pid=24 tickets=10 iters=133363 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 8
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2992 cputicks=24 sched=3014
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2992 cputicks=24 sched=3017
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2996 cputicks=17 sched=3014
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2996 cputicks=21 sched=3017
+$ 
+##### kernel=lottery run=7 seed=8 dur=100
+schedbench prop 100 8
+RESULT wl=prop role=0 pid=4 tickets=30 iters=72501 cputicks=53 sched=54
+RESULT wl=prop role=2 pid=6 tickets=10 iters=18953 cputicks=14 sched=15
+RESULT wl=prop role=1 pid=5 tickets=20 iters=46318 cputicks=33 sched=34
+$ 
+schedbench pingpong 100 8
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=28805 cputicks=22 sched=23
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=28199 cputicks=21 sched=22
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=58 cputicks=0 sched=59
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=38602 cputicks=29 sched=30
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=37114 cputicks=28 sched=29
+$ 
+schedbench fair 8 100 8
+RESULT wl=fair role=6 pid=21 tickets=10 iters=17405 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=15074 cputicks=11 sched=12
+RESULT wl=fair role=7 pid=22 tickets=10 iters=12339 cputicks=10 sched=11
+RESULT wl=fair role=2 pid=17 tickets=10 iters=23483 cputicks=18 sched=19
+RESULT wl=fair role=4 pid=19 tickets=10 iters=14898 cputicks=11 sched=12
+RESULT wl=fair role=0 pid=15 tickets=10 iters=23217 cputicks=17 sched=18
+RESULT wl=fair role=5 pid=20 tickets=10 iters=11874 cputicks=9 sched=10
+RESULT wl=fair role=3 pid=18 tickets=10 iters=15063 cputicks=11 sched=12
+$ 
+schedbench fair 1 100 8
+RESULT wl=solo role=0 pid=24 tickets=10 iters=127106 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 8
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2850 cputicks=22 sched=2871
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2828 cputicks=25 sched=2853
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2829 cputicks=16 sched=2846
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2822 cputicks=21 sched=2843
+$ 
+##### kernel=rr run=8 seed=9 dur=100
+schedbench prop 100 9
+RESULT wl=prop role=1 pid=5 tickets=20 iters=45676 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=45138 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=45386 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 9
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=33607 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=33919 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=32782 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=33408 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 9
+RESULT wl=fair role=4 pid=19 tickets=10 iters=15913 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=15632 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=15050 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=14714 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=16139 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=17300 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=17681 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=18285 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 9
+RESULT wl=solo role=0 pid=24 tickets=10 iters=130824 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 9
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2955 cputicks=27 sched=2981
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2965 cputicks=15 sched=2981
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2961 cputicks=22 sched=2983
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2960 cputicks=22 sched=2982
+$ 
+##### kernel=lottery run=8 seed=9 dur=100
+schedbench prop 100 9
+RESULT wl=prop role=1 pid=5 tickets=20 iters=45438 cputicks=34 sched=35
+RESULT wl=prop role=0 pid=4 tickets=30 iters=65704 cputicks=50 sched=51
+RESULT wl=prop role=2 pid=6 tickets=10 iters=21226 cputicks=16 sched=17
+$ 
+schedbench pingpong 100 9
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=25605 cputicks=19 sched=20
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=45883 cputicks=34 sched=35
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=26807 cputicks=20 sched=21
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=57 cputicks=0 sched=58
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=35814 cputicks=27 sched=28
+$ 
+schedbench fair 8 100 9
+RESULT wl=fair role=1 pid=16 tickets=10 iters=13336 cputicks=10 sched=11
+RESULT wl=fair role=2 pid=17 tickets=10 iters=19591 cputicks=14 sched=15
+RESULT wl=fair role=5 pid=20 tickets=10 iters=11211 cputicks=9 sched=10
+RESULT wl=fair role=4 pid=19 tickets=10 iters=22994 cputicks=18 sched=19
+RESULT wl=fair role=0 pid=15 tickets=10 iters=19939 cputicks=16 sched=17
+RESULT wl=fair role=3 pid=18 tickets=10 iters=15389 cputicks=11 sched=12
+RESULT wl=fair role=6 pid=21 tickets=10 iters=7013 cputicks=6 sched=7
+RESULT wl=fair role=7 pid=22 tickets=10 iters=21193 cputicks=16 sched=17
+$ 
+schedbench fair 1 100 9
+RESULT wl=solo role=0 pid=24 tickets=10 iters=134930 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 9
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2806 cputicks=25 sched=2832
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2782 cputicks=20 sched=2803
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2801 cputicks=17 sched=2819
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2758 cputicks=27 sched=2786
+$ 
+##### kernel=rr run=9 seed=10 dur=100
+schedbench prop 100 10
+RESULT wl=prop role=1 pid=5 tickets=20 iters=42997 cputicks=33 sched=34
+RESULT wl=prop role=2 pid=6 tickets=10 iters=43006 cputicks=33 sched=34
+RESULT wl=prop role=0 pid=4 tickets=30 iters=43766 cputicks=34 sched=35
+$ 
+schedbench pingpong 100 10
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=24 cputicks=0 sched=25
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=33465 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=33763 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=33628 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=34404 cputicks=25 sched=26
+$ 
+schedbench fair 8 100 10
+RESULT wl=fair role=4 pid=19 tickets=10 iters=16428 cputicks=12 sched=13
+RESULT wl=fair role=5 pid=20 tickets=10 iters=15460 cputicks=12 sched=13
+RESULT wl=fair role=6 pid=21 tickets=10 iters=16012 cputicks=12 sched=13
+RESULT wl=fair role=7 pid=22 tickets=10 iters=16453 cputicks=12 sched=13
+RESULT wl=fair role=0 pid=15 tickets=10 iters=16356 cputicks=13 sched=14
+RESULT wl=fair role=1 pid=16 tickets=10 iters=16613 cputicks=13 sched=14
+RESULT wl=fair role=2 pid=17 tickets=10 iters=16871 cputicks=13 sched=14
+RESULT wl=fair role=3 pid=18 tickets=10 iters=17834 cputicks=13 sched=14
+$ 
+schedbench fair 1 100 10
+RESULT wl=solo role=0 pid=24 tickets=10 iters=133661 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 10
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=3093 cputicks=22 sched=3115
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=3093 cputicks=21 sched=3114
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=3092 cputicks=24 sched=3115
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=3091 cputicks=26 sched=3116
+$ 
+##### kernel=lottery run=9 seed=10 dur=100
+schedbench prop 100 10
+RESULT wl=prop role=2 pid=6 tickets=10 iters=14933 cputicks=11 sched=12
+RESULT wl=prop role=0 pid=4 tickets=30 iters=66317 cputicks=50 sched=51
+RESULT wl=prop role=1 pid=5 tickets=20 iters=51226 cputicks=39 sched=40
+$ 
+schedbench pingpong 100 10
+RESULT wl=pingpong role=0 pid=13 tickets=50 iters=61 cputicks=0 sched=62
+RESULT wl=pingpong role=1 pid=9 tickets=10 iters=30418 cputicks=22 sched=23
+RESULT wl=pingpong role=1 pid=11 tickets=10 iters=33914 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=10 tickets=10 iters=34013 cputicks=25 sched=26
+RESULT wl=pingpong role=1 pid=8 tickets=10 iters=38342 cputicks=28 sched=29
+$ 
+schedbench fair 8 100 10
+RESULT wl=fair role=1 pid=16 tickets=10 iters=21226 cputicks=16 sched=17
+RESULT wl=fair role=5 pid=20 tickets=10 iters=5545 cputicks=4 sched=5
+RESULT wl=fair role=3 pid=18 tickets=10 iters=19249 cputicks=14 sched=15
+RESULT wl=fair role=4 pid=19 tickets=10 iters=22263 cputicks=16 sched=17
+RESULT wl=fair role=6 pid=21 tickets=10 iters=18313 cputicks=14 sched=15
+RESULT wl=fair role=0 pid=15 tickets=10 iters=20244 cputicks=15 sched=16
+RESULT wl=fair role=2 pid=17 tickets=10 iters=14231 cputicks=11 sched=12
+RESULT wl=fair role=7 pid=22 tickets=10 iters=13527 cputicks=10 sched=11
+$ 
+schedbench fair 1 100 10
+RESULT wl=solo role=0 pid=24 tickets=10 iters=131647 cputicks=100 sched=101
+$ 
+schedbench forkstorm 100 10
+RESULT wl=forkstorm role=3 pid=29 tickets=10 iters=2840 cputicks=16 sched=2857
+RESULT wl=forkstorm role=0 pid=26 tickets=10 iters=2816 cputicks=20 sched=2836
+RESULT wl=forkstorm role=1 pid=27 tickets=10 iters=2818 cputicks=20 sched=2839
+RESULT wl=forkstorm role=2 pid=28 tickets=10 iters=2832 cputicks=23 sched=2856
+$ 

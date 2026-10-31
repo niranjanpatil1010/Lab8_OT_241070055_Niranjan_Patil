@@ -1,0 +1,391 @@
+{
+ "setup": {
+  "qemu": "qemu-system-riscv64 8.2.2, 1 vCPU, TCG",
+  "xv6": "mit-pdos/xv6-riscv e93dabe",
+  "runs": 10,
+  "duration_ticks": 100,
+  "status": "MEASURED (simulated machine, not bare metal)"
+ },
+ "aggregate": {
+  "rr": {
+   "fair8_jain_cputicks": {
+    "mean": 0.9984025559105432,
+    "std": 0.0,
+    "n": 10
+   },
+   "fair8_total_iters": {
+    "mean": 120864.0,
+    "std": 19048.275024264007,
+    "n": 10
+   },
+   "forkstorm_total_forks": {
+    "mean": 11259.7,
+    "std": 1825.2883635195838,
+    "n": 10
+   },
+   "pingpong_hog_iters": {
+    "mean": 115381.9,
+    "std": 28156.94006262044,
+    "n": 10
+   },
+   "pingpong_roundtrips": {
+    "mean": 24.0,
+    "std": 0.0,
+    "n": 10
+   },
+   "prop_L1_error_vs_tickets": {
+    "mean": 0.32666666666666666,
+    "std": 0.0,
+    "n": 10
+   },
+   "prop_share_t10": {
+    "mean": 0.33,
+    "std": 0.0,
+    "n": 10
+   },
+   "prop_share_t20": {
+    "mean": 0.33,
+    "std": 0.0,
+    "n": 10
+   },
+   "prop_share_t30": {
+    "mean": 0.33999999999999997,
+    "std": 5.551115123125783e-17,
+    "n": 10
+   },
+   "prop_total_iters": {
+    "mean": 117731.1,
+    "std": 24663.446727698058,
+    "n": 10
+   },
+   "solo_iters": {
+    "mean": 123848.6,
+    "std": 17872.20342990757,
+    "n": 10
+   }
+  },
+  "lottery": {
+   "fair8_jain_cputicks": {
+    "mean": 0.9388399354626336,
+    "std": 0.02260494582096431,
+    "n": 10
+   },
+   "fair8_total_iters": {
+    "mean": 121392.7,
+    "std": 18411.291307510182,
+    "n": 10
+   },
+   "forkstorm_total_forks": {
+    "mean": 10334.9,
+    "std": 1805.2995568603012,
+    "n": 10
+   },
+   "pingpong_hog_iters": {
+    "mean": 114927.0,
+    "std": 27008.062625816015,
+    "n": 10
+   },
+   "pingpong_roundtrips": {
+    "mean": 58.7,
+    "std": 6.1975801729384665,
+    "n": 10
+   },
+   "prop_L1_error_vs_tickets": {
+    "mean": 0.10866666666666665,
+    "std": 0.06073988255942986,
+    "n": 10
+   },
+   "prop_share_t10": {
+    "mean": 0.139,
+    "std": 0.02467792535850613,
+    "n": 10
+   },
+   "prop_share_t20": {
+    "mean": 0.345,
+    "std": 0.05536244214266563,
+    "n": 10
+   },
+   "prop_share_t30": {
+    "mean": 0.516,
+    "std": 0.038,
+    "n": 10
+   },
+   "prop_total_iters": {
+    "mean": 115472.4,
+    "std": 28007.100289747956,
+    "n": 10
+   },
+   "solo_iters": {
+    "mean": 122164.6,
+    "std": 18951.249469098337,
+    "n": 10
+   }
+  }
+ },
+ "per_run": {
+  "rr": [
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 81235,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 77494,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 85316,
+    "solo_iters": 89004,
+    "forkstorm_total_forks": 7878
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 69567,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 73340,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 83563,
+    "solo_iters": 87564,
+    "forkstorm_total_forks": 7436
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 92221,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 67107,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 114379,
+    "solo_iters": 130851,
+    "forkstorm_total_forks": 11824
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 130746,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 127598,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 133022,
+    "solo_iters": 135496,
+    "forkstorm_total_forks": 11943
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 135947,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 133903,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 128167,
+    "solo_iters": 135437,
+    "forkstorm_total_forks": 12788
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 132526,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 134587,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 135595,
+    "solo_iters": 130009,
+    "forkstorm_total_forks": 12193
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 132490,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 135771,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 133373,
+    "solo_iters": 132277,
+    "forkstorm_total_forks": 12349
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 136610,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 135043,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 132484,
+    "solo_iters": 133363,
+    "forkstorm_total_forks": 11976
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 136200,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 133716,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 130714,
+    "solo_iters": 130824,
+    "forkstorm_total_forks": 11841
+   },
+   {
+    "prop_share_t30": 0.34,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.33,
+    "prop_L1_error_vs_tickets": 0.32666666666666666,
+    "prop_total_iters": 129769,
+    "pingpong_roundtrips": 24,
+    "pingpong_hog_iters": 135260,
+    "fair8_jain_cputicks": 0.9984025559105432,
+    "fair8_total_iters": 132027,
+    "solo_iters": 133661,
+    "forkstorm_total_forks": 12369
+   }
+  ],
+  "lottery": [
+   {
+    "prop_share_t30": 0.54,
+    "prop_share_t20": 0.31,
+    "prop_share_t10": 0.15,
+    "prop_L1_error_vs_tickets": 0.08000000000000002,
+    "prop_total_iters": 84543,
+    "pingpong_roundtrips": 60,
+    "pingpong_hog_iters": 86243,
+    "fair8_jain_cputicks": 0.9615384615384616,
+    "fair8_total_iters": 83413,
+    "solo_iters": 87170,
+    "forkstorm_total_forks": 6853
+   },
+   {
+    "prop_share_t30": 0.5,
+    "prop_share_t20": 0.36,
+    "prop_share_t10": 0.14,
+    "prop_L1_error_vs_tickets": 0.053333333333333316,
+    "prop_total_iters": 64228,
+    "pingpong_roundtrips": 57,
+    "pingpong_hog_iters": 68154,
+    "fair8_jain_cputicks": 0.9124087591240876,
+    "fair8_total_iters": 89651,
+    "solo_iters": 82078,
+    "forkstorm_total_forks": 6729
+   },
+   {
+    "prop_share_t30": 0.46,
+    "prop_share_t20": 0.41,
+    "prop_share_t10": 0.13,
+    "prop_L1_error_vs_tickets": 0.1533333333333333,
+    "prop_total_iters": 71320,
+    "pingpong_roundtrips": 45,
+    "pingpong_hog_iters": 69296,
+    "fair8_jain_cputicks": 0.963020030816641,
+    "fair8_total_iters": 114046,
+    "solo_iters": 128475,
+    "forkstorm_total_forks": 10270
+   },
+   {
+    "prop_share_t30": 0.54,
+    "prop_share_t20": 0.36,
+    "prop_share_t10": 0.1,
+    "prop_L1_error_vs_tickets": 0.13333333333333336,
+    "prop_total_iters": 132684,
+    "pingpong_roundtrips": 70,
+    "pingpong_hog_iters": 123239,
+    "fair8_jain_cputicks": 0.9735202492211839,
+    "fair8_total_iters": 130183,
+    "solo_iters": 131131,
+    "forkstorm_total_forks": 11358
+   },
+   {
+    "prop_share_t30": 0.54,
+    "prop_share_t20": 0.31,
+    "prop_share_t10": 0.15,
+    "prop_L1_error_vs_tickets": 0.08000000000000002,
+    "prop_total_iters": 131519,
+    "pingpong_roundtrips": 54,
+    "pingpong_hog_iters": 133741,
+    "fair8_jain_cputicks": 0.9585889570552147,
+    "fair8_total_iters": 128740,
+    "solo_iters": 134706,
+    "forkstorm_total_forks": 11360
+   },
+   {
+    "prop_share_t30": 0.59,
+    "prop_share_t20": 0.22,
+    "prop_share_t10": 0.19,
+    "prop_L1_error_vs_tickets": 0.22666666666666663,
+    "prop_total_iters": 135733,
+    "pingpong_roundtrips": 64,
+    "pingpong_hog_iters": 132782,
+    "fair8_jain_cputicks": 0.9286775631500743,
+    "fair8_total_iters": 134313,
+    "solo_iters": 130847,
+    "forkstorm_total_forks": 11678
+   },
+   {
+    "prop_share_t30": 0.46,
+    "prop_share_t20": 0.42,
+    "prop_share_t10": 0.12,
+    "prop_L1_error_vs_tickets": 0.1733333333333333,
+    "prop_total_iters": 132081,
+    "pingpong_roundtrips": 61,
+    "pingpong_hog_iters": 132299,
+    "fair8_jain_cputicks": 0.9204712812960235,
+    "fair8_total_iters": 134964,
+    "solo_iters": 133556,
+    "forkstorm_total_forks": 11319
+   },
+   {
+    "prop_share_t30": 0.53,
+    "prop_share_t20": 0.33,
+    "prop_share_t10": 0.14,
+    "prop_L1_error_vs_tickets": 0.05999999999999997,
+    "prop_total_iters": 137772,
+    "pingpong_roundtrips": 58,
+    "pingpong_hog_iters": 132720,
+    "fair8_jain_cputicks": 0.942684766214178,
+    "fair8_total_iters": 133353,
+    "solo_iters": 127106,
+    "forkstorm_total_forks": 11329
+   },
+   {
+    "prop_share_t30": 0.5,
+    "prop_share_t20": 0.34,
+    "prop_share_t10": 0.16,
+    "prop_L1_error_vs_tickets": 0.013333333333333364,
+    "prop_total_iters": 132368,
+    "pingpong_roundtrips": 57,
+    "pingpong_hog_iters": 134109,
+    "fair8_jain_cputicks": 0.9124087591240876,
+    "fair8_total_iters": 130666,
+    "solo_iters": 134930,
+    "forkstorm_total_forks": 11147
+   },
+   {
+    "prop_share_t30": 0.5,
+    "prop_share_t20": 0.39,
+    "prop_share_t10": 0.11,
+    "prop_L1_error_vs_tickets": 0.11333333333333336,
+    "prop_total_iters": 132476,
+    "pingpong_roundtrips": 61,
+    "pingpong_hog_iters": 136687,
+    "fair8_jain_cputicks": 0.9150805270863837,
+    "fair8_total_iters": 134598,
+    "solo_iters": 131647,
+    "forkstorm_total_forks": 11306
+   }
+  ]
+ }
+}

@@ -1,0 +1,603 @@
+diff --git a/Makefile b/Makefile
+index a26f3db..faf4ec4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -66,6 +66,9 @@ DETFLAGS = -ffile-prefix-map=$(CURDIR)=.
+ CFLAGS = -Wall -Werror -Wno-unknown-attributes -O -fno-omit-frame-pointer -ggdb -gdwarf-2
+ CFLAGS += $(DETFLAGS)
+ CFLAGS += -march=rv64gc
++ifeq ($(SCHED),lottery)
++CFLAGS += -DSCHED_LOTTERY
++endif
+ CFLAGS += -std=gnu99
+ CFLAGS += -MD
+ CFLAGS += -mcmodel=medany
+@@ -151,6 +154,7 @@ UPROGS=\
+ 	$U/_forphan\
+ 	$U/_dorphan\
+ 	$U/_sync\
++	$U/_schedbench\
+ 
+ fs.img: mkfs/mkfs README $(UPROGS)
+ 	mkfs/mkfs fs.img README $(UPROGS)
+diff --git a/kernel/defs.h b/kernel/defs.h
+index 0ae6896..e4b678f 100644
+--- a/kernel/defs.h
++++ b/kernel/defs.h
+@@ -100,6 +100,11 @@ void            userinit(void);
+ int             kwait(uint64);
+ void            wakeup(void*);
+ void            yield(void);
++uint            lottery_rand(void);
++int             schedseed(int);
++void            charge_tick(void);
++int             settickets(int);
++int             getpinfo(uint64);
+ int             either_copyout(int user_dst, uint64 dst, void *src, uint64 len);
+ int             either_copyin(void *dst, int user_src, uint64 src, uint64 len);
+ void            procdump(void);
+diff --git a/kernel/proc.c b/kernel/proc.c
+index 31f23a3..5fd634f 100644
+--- a/kernel/proc.c
++++ b/kernel/proc.c
+@@ -5,11 +5,16 @@
+ #include "spinlock.h"
+ #include "proc.h"
+ #include "defs.h"
++#include "pstat.h"
+ 
+ struct cpu cpus[NCPU];
+ 
+ struct proc proc[NPROC];
+ 
++// xorshift32 PRNG shared by all CPUs for the lottery draw; seed set via schedseed().
++static uint lottery_state = 2463534242U;
++static struct spinlock lottery_lock;
++
+ struct proc *initproc;
+ 
+ int nextpid = 1;
+@@ -51,6 +56,7 @@ procinit(void)
+ 
+   initlock(&pid_lock, "nextpid");
+   initlock(&wait_lock, "wait_lock");
++  initlock(&lottery_lock, "lottery");
+   for (p = proc; p < &proc[NPROC]; p++) {
+     initlock(&p->lock, "proc");
+     p->state = UNUSED;
+@@ -124,6 +130,9 @@ allocproc(void)
+ found:
+   p->pid = allocpid();
+   p->state = USED;
++  p->tickets = 1;
++  p->cputicks = 0;
++  p->sched = 0;
+ 
+   // Allocate a trapframe page.
+   if ((p->trapframe = (struct trapframe *)kalloc()) == 0) {
+@@ -274,6 +283,7 @@ kfork(void)
+     return -1;
+   }
+   np->sz = p->sz;
++  np->tickets = p->tickets; // children inherit tickets
+ 
+   // copy saved user registers.
+   *(np->trapframe) = *(p->trapframe);
+@@ -441,6 +451,43 @@ scheduler(void)
+     intr_on();
+     intr_off();
+ 
++#ifdef SCHED_LOTTERY
++    // Lottery scheduling: pass 1 counts the tickets of all RUNNABLE
++    // processes, a pseudo-random winning ticket is drawn, pass 2 finds
++    // its holder. The winner's state is re-checked under its lock, so
++    // a stale count only causes a redraw, never a wrong switch.
++    int total = 0;
++    for (p = proc; p < &proc[NPROC]; p++) {
++      acquire(&p->lock);
++      if (p->state == RUNNABLE)
++        total += p->tickets;
++      release(&p->lock);
++    }
++    if (total == 0) {
++      asm volatile("wfi");
++      continue;
++    }
++    int winner = (int)(lottery_rand() % (uint)total);
++    int counter = 0;
++    for (p = proc; p < &proc[NPROC]; p++) {
++      acquire(&p->lock);
++      if (p->state == RUNNABLE) {
++        counter += p->tickets;
++        if (counter > winner) {
++          p->state = RUNNING;
++          p->sched++;
++          c->proc = p;
++          swtch(&c->context, &p->context);
++          mycpu()->intena = 0;
++          c->proc = 0;
++          release(&p->lock);
++          break;
++        }
++      }
++      release(&p->lock);
++    }
++#else
++    // Original xv6 round-robin scan (baseline).
+     int found = 0;
+     for (p = proc; p < &proc[NPROC]; p++) {
+       acquire(&p->lock);
+@@ -449,6 +496,7 @@ scheduler(void)
+         // to release its lock and then reacquire it
+         // before jumping back to us.
+         p->state = RUNNING;
++        p->sched++;
+         c->proc = p;
+         swtch(&c->context, &p->context);
+ 
+@@ -466,7 +514,77 @@ scheduler(void)
+       // nothing to run; stop running on this core until an interrupt.
+       asm volatile("wfi");
+     }
++#endif
++  }
++}
++
++// ---- lottery-scheduler support (accounting + syscalls) ----
++
++uint
++lottery_rand(void)
++{
++  uint x;
++  acquire(&lottery_lock);
++  x = lottery_state;
++  x ^= x << 13;
++  x ^= x >> 17;
++  x ^= x << 5;
++  lottery_state = x;
++  release(&lottery_lock);
++  return x;
++}
++
++int
++schedseed(int seed)
++{
++  acquire(&lottery_lock);
++  lottery_state = seed ? (uint)seed : 1; // xorshift state must be non-zero
++  release(&lottery_lock);
++  return 0;
++}
++
++// Called from the timer-interrupt path: charge one tick to the running process.
++void
++charge_tick(void)
++{
++  struct proc *p = myproc();
++  if (p == 0)
++    return;
++  acquire(&p->lock);
++  p->cputicks++;
++  release(&p->lock);
++}
++
++int
++settickets(int n)
++{
++  struct proc *p = myproc();
++  if (n < 1)
++    return -1;
++  acquire(&p->lock);
++  p->tickets = n;
++  release(&p->lock);
++  return 0;
++}
++
++int
++getpinfo(uint64 addr)
++{
++  struct pstat st;
++  struct proc *p;
++  int i = 0;
++  for (p = proc; p < &proc[NPROC]; p++, i++) {
++    acquire(&p->lock);
++    st.inuse[i] = (p->state != UNUSED);
++    st.pid[i] = p->pid;
++    st.tickets[i] = p->tickets;
++    st.cputicks[i] = p->cputicks;
++    st.sched[i] = p->sched;
++    release(&p->lock);
+   }
++  if (copyout(myproc()->pagetable, myproc()->sz, addr, (char *)&st, sizeof(st)) < 0)
++    return -1;
++  return 0;
+ }
+ 
+ // Switch to scheduler.  Must hold only p->lock
+diff --git a/kernel/proc.h b/kernel/proc.h
+index 5603697..9916a62 100644
+--- a/kernel/proc.h
++++ b/kernel/proc.h
+@@ -88,6 +88,9 @@ struct proc {
+   int killed;           // If non-zero, have been killed
+   int xstate;           // Exit status to be returned to parent's wait
+   int pid;              // Process ID
++  int tickets;          // Lottery tickets (>=1), inherited by children
++  int cputicks;         // Timer ticks spent running (accounting)
++  int sched;            // Times chosen by the scheduler (accounting)
+ 
+   // wait_lock must be held when using this:
+   struct proc *parent; // Parent process
+diff --git a/kernel/pstat.h b/kernel/pstat.h
+new file mode 100644
+index 0000000..845fd4d
+--- /dev/null
++++ b/kernel/pstat.h
+@@ -0,0 +1,15 @@
++#ifndef _PSTAT_H_
++#define _PSTAT_H_
++
++#include "param.h"
++
++// Per-process scheduling statistics returned by getpinfo().
++struct pstat {
++  int inuse[NPROC];     // 1 if the slot holds a live process
++  int pid[NPROC];       // process id
++  int tickets[NPROC];   // lottery tickets held (1 = default)
++  int cputicks[NPROC];  // timer ticks during which the process was running
++  int sched[NPROC];     // number of times the scheduler picked the process
++};
++
++#endif
+diff --git a/kernel/syscall.c b/kernel/syscall.c
+index 1800f20..0ece325 100644
+--- a/kernel/syscall.c
++++ b/kernel/syscall.c
+@@ -103,6 +103,9 @@ extern uint64 sys_link(void);
+ extern uint64 sys_mkdir(void);
+ extern uint64 sys_close(void);
+ extern uint64 sys_sync(void);
++extern uint64 sys_settickets(void);
++extern uint64 sys_getpinfo(void);
++extern uint64 sys_schedseed(void);
+ 
+ // An array mapping syscall numbers from syscall.h
+ // to the function that handles the system call.
+@@ -130,6 +133,9 @@ static uint64 (*syscalls[])(void) = {
+   [SYS_mkdir]   = sys_mkdir,
+   [SYS_close]   = sys_close,
+   [SYS_sync]    = sys_sync,
++  [SYS_settickets] = sys_settickets,
++  [SYS_getpinfo]   = sys_getpinfo,
++  [SYS_schedseed]  = sys_schedseed,
+   // clang-format on
+ };
+ 
+diff --git a/kernel/syscall.h b/kernel/syscall.h
+index 5a4a39f..d0b36c5 100644
+--- a/kernel/syscall.h
++++ b/kernel/syscall.h
+@@ -21,3 +21,6 @@
+ #define SYS_mkdir  20
+ #define SYS_close  21
+ #define SYS_sync   22
++#define SYS_settickets 23
++#define SYS_getpinfo   24
++#define SYS_schedseed  25
+diff --git a/kernel/sysproc.c b/kernel/sysproc.c
+index cd25557..7c4681c 100644
+--- a/kernel/sysproc.c
++++ b/kernel/sysproc.c
+@@ -110,3 +110,27 @@ sys_uptime(void)
+   release(&tickslock);
+   return xticks;
+ }
++
++uint64
++sys_settickets(void)
++{
++  int n;
++  argint(0, &n);
++  return settickets(n);
++}
++
++uint64
++sys_getpinfo(void)
++{
++  uint64 addr;
++  argaddr(0, &addr);
++  return getpinfo(addr);
++}
++
++uint64
++sys_schedseed(void)
++{
++  int seed;
++  argint(0, &seed);
++  return schedseed(seed);
++}
+diff --git a/kernel/trap.c b/kernel/trap.c
+index 00e99bc..c8c2d02 100644
+--- a/kernel/trap.c
++++ b/kernel/trap.c
+@@ -82,8 +82,10 @@ usertrap(void)
+     kexit(-1);
+ 
+   // give up the CPU if this is a timer interrupt.
+-  if (which_dev == 2)
++  if (which_dev == 2) {
++    charge_tick();
+     yield();
++  }
+ 
+   prepare_return();
+ 
+@@ -154,8 +156,10 @@ kerneltrap()
+   }
+ 
+   // give up the CPU if this is a timer interrupt.
+-  if (which_dev == 2 && myproc() != 0)
++  if (which_dev == 2 && myproc() != 0) {
++    charge_tick();
+     yield();
++  }
+ 
+   // the yield() may have caused some traps to occur,
+   // so restore trap registers for use by kernelvec.S's sepc instruction.
+diff --git a/user/schedbench.c b/user/schedbench.c
+new file mode 100644
+index 0000000..f922682
+--- /dev/null
++++ b/user/schedbench.c
+@@ -0,0 +1,219 @@
++// schedbench: scheduler benchmarks for xv6 (lottery vs round-robin).
++//
++//   schedbench prop      <dur> <seed>   3 CPU hogs holding 30/20/10 tickets
++//   schedbench pingpong  <dur> <seed>   pipe ping-pong pair (50 tickets each) vs 4 CPU hogs (10 each)
++//   schedbench fair  <n> <dur> <seed>   n equal CPU hogs (fairness + throughput/overhead)
++//   schedbench forkstorm <dur> <seed>   4 processes doing fork()/exit()/wait() in a loop
++//
++// <dur> is in timer ticks. Every child reports one fixed-size record through a
++// pipe; the parent prints "RESULT ..." lines that trackG/run.py parses.
++// Run time is bounded by an absolute deadline taken from uptime().
++
++#include "kernel/types.h"
++#include "kernel/stat.h"
++#include "kernel/pstat.h"
++#include "user/user.h"
++
++struct rec {
++  int role;     // workload-specific role id
++  int pid;
++  int tickets;
++  int iters;    // units of useful work completed
++  int cputicks; // timer ticks charged to this process
++  int sched;    // times scheduled
++};
++
++static struct pstat st;
++
++static void
++fill_self(struct rec *r)
++{
++  int me = getpid();
++  getpinfo(&st);
++  for (int i = 0; i < NPROC; i++) {
++    if (st.inuse[i] && st.pid[i] == me) {
++      r->pid = me;
++      r->tickets = st.tickets[i];
++      r->cputicks = st.cputicks[i];
++      r->sched = st.sched[i];
++    }
++  }
++}
++
++// one "unit" of CPU work between clock reads
++static volatile int sink;
++static void
++unit(void)
++{
++  for (int i = 0; i < 20000; i++)
++    sink += i;
++}
++
++static int
++hog(int deadline)
++{
++  int n = 0;
++  while ((int)uptime() < deadline) {
++    unit();
++    n++;
++  }
++  return n;
++}
++
++// Fork a child that starts with `tickets` tickets: the parent sets its own
++// tickets first (children inherit them), then restores itself to 1. Setting
++// tickets inside the child would let the first-run child grab a huge share
++// while its siblings still hold 1 ticket (start-up starvation).
++static int
++fork_with(int tickets)
++{
++  settickets(tickets);
++  int pid = fork();
++  if (pid != 0)
++    settickets(1);
++  return pid;
++}
++
++static void
++spawn_hog(int tickets, int role, int deadline, int wfd)
++{
++  if (fork_with(tickets) == 0) {
++    struct rec r = {0};
++    r.role = role;
++    r.iters = hog(deadline);
++    fill_self(&r);
++    write(wfd, &r, sizeof(r));
++    exit(0);
++  }
++}
++
++static int
++collect(int rfd, int n, struct rec *out)
++{
++  for (int i = 0; i < n; i++)
++    if (read(rfd, &out[i], sizeof(struct rec)) != sizeof(struct rec))
++      return -1;
++  while (wait(0) > 0)
++    ;
++  return 0;
++}
++
++static void
++print_rec(const char *wl, struct rec *r)
++{
++  printf("RESULT wl=%s role=%d pid=%d tickets=%d iters=%d cputicks=%d sched=%d\n",
++         wl, r->role, r->pid, r->tickets, r->iters, r->cputicks, r->sched);
++}
++
++static void
++w_prop(int dur, int seed)
++{
++  int p[2], tix[3] = {30, 20, 10};
++  struct rec rs[3];
++  schedseed(seed);
++  pipe(p);
++  int deadline = uptime() + dur;
++  for (int i = 0; i < 3; i++)
++    spawn_hog(tix[i], i, deadline, p[1]);
++  if (collect(p[0], 3, rs) < 0) { printf("ERROR prop\n"); return; }
++  for (int i = 0; i < 3; i++) print_rec("prop", &rs[i]);
++}
++
++static void
++w_fair(int n, int dur, int seed)
++{
++  int p[2];
++  struct rec rs[16];
++  if (n > 16) n = 16;
++  schedseed(seed);
++  pipe(p);
++  int deadline = uptime() + dur;
++  for (int i = 0; i < n; i++)
++    spawn_hog(10, i, deadline, p[1]);
++  if (collect(p[0], n, rs) < 0) { printf("ERROR fair\n"); return; }
++  for (int i = 0; i < n; i++) print_rec(n == 1 ? "solo" : "fair", &rs[i]);
++}
++
++static void
++w_pingpong(int dur, int seed)
++{
++  int p[2], ab[2], ba[2];
++  struct rec rs[5];
++  schedseed(seed);
++  pipe(p);
++  pipe(ab);
++  pipe(ba);
++  int deadline = uptime() + dur;
++  for (int i = 0; i < 4; i++)
++    spawn_hog(10, 1, deadline, p[1]);
++  // echoer B: reads from ab, writes to ba, until ab is closed by A
++  if (fork_with(50) == 0) {
++    char c;
++    close(ab[1]); close(ba[0]); close(p[0]);
++    while (read(ab[0], &c, 1) == 1)
++      write(ba[1], &c, 1);
++    exit(0);
++  }
++  // pinger A: counts completed round trips, reports
++  if (fork_with(50) == 0) {
++    struct rec r = {0};
++    char c = 'x';
++    close(ab[0]); close(ba[1]); close(p[0]);
++    while ((int)uptime() < deadline) {
++      write(ab[1], &c, 1);
++      if (read(ba[0], &c, 1) != 1) break;
++      r.iters++;
++    }
++    r.role = 0;
++    fill_self(&r);
++    write(p[1], &r, sizeof(r));
++    close(ab[1]); // lets B see EOF
++    exit(0);
++  }
++  close(ab[0]); close(ab[1]); close(ba[0]); close(ba[1]);
++  if (collect(p[0], 5, rs) < 0) { printf("ERROR pingpong\n"); return; }
++  for (int i = 0; i < 5; i++) print_rec("pingpong", &rs[i]);
++}
++
++static void
++w_forkstorm(int dur, int seed)
++{
++  int p[2];
++  struct rec rs[4];
++  schedseed(seed);
++  pipe(p);
++  int deadline = uptime() + dur;
++  for (int i = 0; i < 4; i++) {
++    if (fork_with(10) == 0) {
++      struct rec r = {0};
++      r.role = i;
++      while ((int)uptime() < deadline) {
++        int pid = fork();
++        if (pid == 0)
++          exit(0);
++        wait(0);
++        r.iters++;
++      }
++      fill_self(&r);
++      write(p[1], &r, sizeof(r));
++      exit(0);
++    }
++  }
++  if (collect(p[0], 4, rs) < 0) { printf("ERROR forkstorm\n"); return; }
++  for (int i = 0; i < 4; i++) print_rec("forkstorm", &rs[i]);
++}
++
++int
++main(int argc, char *argv[])
++{
++  if (argc < 4) {
++    printf("usage: schedbench prop|pingpong|forkstorm <dur> <seed> | fair <n> <dur> <seed>\n");
++    exit(1);
++  }
++  if (!strcmp(argv[1], "prop")) w_prop(atoi(argv[2]), atoi(argv[3]));
++  else if (!strcmp(argv[1], "pingpong")) w_pingpong(atoi(argv[2]), atoi(argv[3]));
++  else if (!strcmp(argv[1], "forkstorm")) w_forkstorm(atoi(argv[2]), atoi(argv[3]));
++  else if (!strcmp(argv[1], "fair") && argc >= 5) w_fair(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]));
++  else { printf("bad args\n"); exit(1); }
++  exit(0);
++}
+diff --git a/user/user.h b/user/user.h
+index 29aad59..9818340 100644
+--- a/user/user.h
++++ b/user/user.h
+@@ -1,6 +1,7 @@
+ #define SBRK_ERROR ((char *)-1)
+ 
+ struct stat;
++struct pstat;
+ 
+ // system calls
+ int fork(void);
+@@ -24,6 +25,9 @@ int getpid(void);
+ char *sys_sbrk(int, int);
+ int pause(int);
+ int uptime(void);
++int settickets(int);
++int getpinfo(struct pstat *);
++int schedseed(int);
+ int sync(void);
+ 
+ // ulib.c
+diff --git a/user/usys.pl b/user/usys.pl
+index 4d054e8..74dfe92 100755
+--- a/user/usys.pl
++++ b/user/usys.pl
+@@ -43,3 +43,6 @@ entry("sbrk");
+ entry("pause");
+ entry("uptime");
+ entry("sync");
++entry("settickets");
++entry("getpinfo");
++entry("schedseed");

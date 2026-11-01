@@ -19,7 +19,7 @@
     1,
     1
    ],
-   "time_s": 0.0001
+   "time_s": 9e-05
   },
   "exact_brute": {
    "value": 30,
@@ -30,7 +30,7 @@
     5,
     7
    ],
-   "time_s": 0.00657
+   "time_s": 0.00663
   },
   "approx_ratio": 1.0,
   "theory_lower_bound": 0.6321,
@@ -86,26 +86,26 @@
  "D2c_speedup": {
   "chunk_size": 300000,
   "n_chunks": 12,
-  "serial_time_s": 0.101,
+  "serial_time_s": 0.0794,
   "by_workers": {
    "1": {
-    "time_s": 0.4343,
-    "speedup": 0.233,
-    "efficiency": 0.233
+    "time_s": 0.4727,
+    "speedup": 0.168,
+    "efficiency": 0.168
    },
    "2": {
-    "time_s": 0.4607,
-    "speedup": 0.219,
-    "efficiency": 0.11
+    "time_s": 0.5307,
+    "speedup": 0.15,
+    "efficiency": 0.075
    },
    "4": {
-    "time_s": 0.5505,
-    "speedup": 0.183,
-    "efficiency": 0.046
+    "time_s": 0.6222,
+    "speedup": 0.128,
+    "efficiency": 0.032
    }
   },
-  "amdahl_estimated_p": -5.9526,
-  "gustafson_S_at_4": -16.858,
+  "amdahl_estimated_p": -9.0833,
+  "gustafson_S_at_4": -26.25,
   "parallelism_types": {
    "data": "Each chunk is a mini-dataset processed independently (embarrassingly parallel)",
    "model": "Would split model layers across workers; not measured separately (overhead > gain at this scale)",

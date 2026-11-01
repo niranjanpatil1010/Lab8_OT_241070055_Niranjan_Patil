@@ -1,49 +1,48 @@
 {
  "codebase": {
   "name": "optimize-anything (this repo)",
-  "source_lines_track_dirs": 3130,
-  "tests_profiled": 72,
-  "functions_covered_by_full_suite": 110,
-  "sum_of_test_times_s": 13.238,
-  "full_suite_wall_s": 16.434,
+  "source_lines_track_dirs": 3191,
+  "tests_profiled": 85,
+  "functions_covered_by_full_suite": 111,
+  "sum_of_test_times_s": 22.169,
+  "full_suite_wall_s": 32.589,
   "full_suite_wall_runs_s": [
-   16.855,
-   16.434,
-   16.149
+   33.565,
+   32.589,
+   31.531
   ]
  },
  "problem_a_minimization": {
   "naive_full_suite": {
-   "tests": 72,
-   "predicted_s": 13.238,
-   "wall_s": 16.434,
+   "tests": 85,
+   "predicted_s": 22.169,
+   "wall_s": 32.589,
    "coverage": 1.0
   },
   "greedy_set_cover": {
    "tests": 46,
-   "predicted_s": 9.7,
-   "wall_s": 16.268,
+   "predicted_s": 15.008,
+   "wall_s": 32.553,
    "wall_runs_s": [
-    16.268,
-    16.633,
-    16.251
+    33.383,
+    32.553,
+    32.058
    ],
-   "measured_speedup_vs_full": 1.01,
-   "measured_time_reduction_pct": 1.0,
-   "functions_covered_independent": 112,
-   "functions_required": 110,
+   "measured_speedup_vs_full": 1.0,
+   "measured_time_reduction_pct": 0.1,
+   "functions_covered_independent": 113,
+   "functions_required": 111,
    "coverage_retained": 1.0,
    "selected": [
     "tests/test_trackF.py::TestTrackFCompiler::test_optimizer_preserves_program_semantics",
     "tests/test_trackB.py::TestQUBO::test_qubo_energy_match_cut",
     "tests/test_trackB.py::TestKnapsack::test_bnb_matches_dp",
     "tests/test_trackB.py::TestKnapsack::test_greedy_cannot_exceed_optimal",
-    "tests/test_trackB.py::TestQUBO::test_ising_conversion_consistent",
     "tests/test_trackB.py::TestScheduling::test_dp_feasible",
-    "tests/test_trackE.py::test_validator_catches_clash",
     "tests/test_trackG.py::test_parse_and_prop_metrics",
     "tests/test_trackB.py::TestMaxCut::test_cut_symmetry",
     "tests/test_trackB.py::TestMaxCut::test_greedy_feasible",
+    "tests/test_trackB.py::TestQUBO::test_ising_conversion_consistent",
     "tests/test_trackB.py::TestScheduling::test_greedy_feasible",
     "tests/test_trackD.py::TestDistributedFedAvg::test_local_sgd_step",
     "tests/test_trackD.py::TestMultiTaskOptimization::test_mgda_analytical_weights",
@@ -51,28 +50,29 @@
     "tests/test_trackD.py::TestParallelScheduling::test_lpt_makespan_bound",
     "tests/test_trackD.py::TestParallelScheduling::test_work_stealing_feasible",
     "tests/test_trackD.py::TestSubmodularCoverage::test_coverage_empty",
-    "tests/test_trackE.py::test_greedy_feasible",
     "tests/test_trackG.py::test_jain_bounds",
     "tests/test_trackH.py::TestTrackHDBMS::test_explain_plan_generation",
-    "tests/test_trackI.py::TestTrackIAlgorithms::test_bernstein_vazirani_recovery",
-    "tests/test_trackI.py::TestTrackIAlgorithms::test_deutsch_jozsa_distinction",
-    "tests/test_trackI.py::TestTrackIAlgorithms::test_qft_unitary_match",
     "tests/test_trackI.py::TestTrackIAlgorithms::test_shor_factoring_correctness",
-    "tests/test_trackB.py::TestKnapsack::test_ilp_matches_dp",
-    "tests/test_trackI.py::TestTrackIAlgorithms::test_qpe_exact_phase_recovery",
-    "tests/test_trackD.py::TestSubmodularCoverage::test_greedy_within_guarantee",
-    "tests/test_trackB.py::TestQUBO::test_qubo_sa_feasible",
-    "tests/test_trackD.py::TestDistributedFedAvg::test_fedavg_convergence",
-    "tests/test_trackD.py::TestMultiTaskOptimization::test_train_mt_reproducibility",
+    "tests/test_trackI.py::TestTrackIAlgorithms::test_qft_unitary_match",
     "tests/test_trackH.py::TestTrackHDBMS::test_index_selection_knapsack_algorithms_agree",
-    "tests/test_trackC.py::TestTrackCFiniteShotsAndNoise::test_hardware_noise_degrades_fidelity",
-    "tests/test_trackI.py::TestTrackIAlgorithms::test_grover_vs_linear_query_advantage",
+    "tests/test_trackI.py::TestTrackIAlgorithms::test_bernstein_vazirani_recovery",
+    "tests/test_trackE.py::test_greedy_feasible",
+    "tests/test_trackI.py::TestTrackIAlgorithms::test_deutsch_jozsa_distinction",
+    "tests/test_trackI.py::TestTrackIAlgorithms::test_qpe_exact_phase_recovery",
     "tests/test_trackF.py::TestTrackFCompiler::test_register_allocation_ilp_validity_and_optimality",
+    "tests/test_trackB.py::TestKnapsack::test_ilp_matches_dp",
+    "tests/test_trackD.py::TestSubmodularCoverage::test_greedy_within_guarantee",
+    "tests/test_trackD_locality.py::test_helpers_are_correct",
+    "tests/test_trackI.py::TestTrackIAlgorithms::test_grover_vs_linear_query_advantage",
+    "tests/test_trackB.py::TestQUBO::test_qubo_sa_feasible",
+    "tests/test_trackC.py::TestTrackCFiniteShotsAndNoise::test_hardware_noise_degrades_fidelity",
+    "tests/test_trackD.py::TestDistributedFedAvg::test_fedavg_convergence",
     "tests/test_trackI.py::TestTrackIAlgorithms::test_hardware_noise_reduces_bv_fidelity",
-    "tests/test_trackI.py::TestTrackIAlgorithms::test_quantum_annealing_ground_state",
+    "tests/test_trackD.py::TestMultiTaskOptimization::test_train_mt_reproducibility",
     "tests/test_trackD.py::TestSubmodularCoverage::test_submodularity_diminishing_returns",
     "tests/test_trackB.py::TestMaxCut::test_sa_matches_brute_on_triangle",
     "tests/test_trackC.py::TestTrackCFiniteShotsAndNoise::test_shot_noise_variance_decreases",
+    "tests/test_trackI.py::TestTrackIAlgorithms::test_quantum_annealing_ground_state",
     "tests/test_trackH.py::TestTrackHDBMS::test_query_workload_execution",
     "tests/test_trackE.py::test_bnb_equals_ilp_tiny",
     "tests/test_trackC.py::TestTrackCVQE::test_vqe_approaches_exact_ground_state",
@@ -83,18 +83,18 @@
    ]
   },
   "ilp_exact_set_cover": {
-   "tests": 42,
-   "predicted_s": 9.694,
-   "wall_s": 15.287,
+   "tests": 43,
+   "predicted_s": 14.996,
+   "wall_s": 28.981,
    "wall_runs_s": [
-    15.656,
-    15.287,
-    14.468
+    31.867,
+    28.981,
+    28.951
    ],
-   "measured_speedup_vs_full": 1.08,
-   "measured_time_reduction_pct": 7.0,
-   "functions_covered_independent": 112,
-   "functions_required": 110,
+   "measured_speedup_vs_full": 1.12,
+   "measured_time_reduction_pct": 11.1,
+   "functions_covered_independent": 113,
+   "functions_required": 111,
    "coverage_retained": 1.0,
    "selected": [
     "tests/test_trackB.py::TestKnapsack::test_bnb_matches_dp",
@@ -122,6 +122,7 @@
     "tests/test_trackD.py::TestParallelScheduling::test_work_stealing_feasible",
     "tests/test_trackD.py::TestSubmodularCoverage::test_greedy_within_guarantee",
     "tests/test_trackD.py::TestSubmodularCoverage::test_submodularity_diminishing_returns",
+    "tests/test_trackD_locality.py::test_helpers_are_correct",
     "tests/test_trackE.py::test_bnb_equals_ilp_tiny",
     "tests/test_trackF.py::TestTrackFCompiler::test_optimizer_preserves_program_semantics",
     "tests/test_trackF.py::TestTrackFCompiler::test_register_allocation_ilp_validity_and_optimality",
@@ -141,26 +142,26 @@
     "tests/test_trackI.py::TestTrackIAlgorithms::test_shor_factoring_correctness"
    ]
   },
-  "ilp_solver_time_s": 0.0142
+  "ilp_solver_time_s": 0.0148
  },
  "problem_b_budget": {
-  "budget_s": 1.324,
+  "budget_s": 2.217,
   "budget_fraction_of_suite": 0.1,
-  "random_10seeds_functions_mean": 83.4,
-  "random_std": 13.53,
+  "random_10seeds_functions_mean": 83.7,
+  "random_std": 17.23,
   "greedy": {
-   "functions": 94,
-   "spent_s": 1.212,
-   "independent_check": 94,
-   "tests": 65
+   "functions": 95,
+   "spent_s": 2.056,
+   "independent_check": 95,
+   "tests": 78
   },
   "ilp": {
-   "functions": 94,
-   "spent_s": 1.026,
-   "independent_check": 94,
+   "functions": 95,
+   "spent_s": 1.674,
+   "independent_check": 95,
    "tests": 38
   },
-  "of_total_functions": 110
+  "of_total_functions": 111
  },
  "cost_analysis": {
   "correctness_risk": "Function-level coverage retention does NOT imply equal fault detection: dropped tests assert different properties on the same functions (not measured here: no mutation testing).",

@@ -5,45 +5,45 @@
   "claude_chat": {
    "greedy": {
     "infeasible": 0,
-    "optimal": 25,
-    "mean_ms": 0.10412237500077026
+    "optimal": 26,
+    "mean_ms": 0.05251254187896848
    },
    "dp": {
     "infeasible": 0,
     "optimal": 40,
-    "mean_ms": 0.13272369999981493
+    "mean_ms": 0.0897524761967361
    },
    "bnb": {
     "infeasible": 0,
     "optimal": 40,
-    "mean_ms": 0.15224027499876058
+    "mean_ms": 0.0984274665825069
    },
    "ilp": {
     "infeasible": 0,
     "optimal": 40,
-    "mean_ms": 10.255081800001875
+    "mean_ms": 2.325027482584119
    }
   },
   "antigravity": {
    "greedy": {
     "infeasible": 0,
-    "optimal": 25,
-    "mean_ms": 0.180499299999326
+    "optimal": 26,
+    "mean_ms": 0.027012499049305916
    },
    "dp": {
     "infeasible": 0,
     "optimal": 40,
-    "mean_ms": 0.1326733000006186
+    "mean_ms": 0.08172998204827309
    },
    "bnb": {
     "infeasible": 0,
     "optimal": 40,
-    "mean_ms": 0.18319709999978784
+    "mean_ms": 0.09232503361999989
    },
    "ilp": {
     "infeasible": 0,
     "optimal": 40,
-    "mean_ms": 9.96007742499998
+    "mean_ms": 2.0372824859805405
    }
   }
  },

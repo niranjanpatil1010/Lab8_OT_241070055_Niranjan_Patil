@@ -40,7 +40,7 @@ def _work_local(args):
 def _tiny(x): return x * 2
 
 def d6(nproc):
-    out = {"nproc": nproc}; N = 200_000; ctx = mp.get_context("fork")
+    out = {"nproc": nproc}; N = 200_000; ctx = mp.get_context("fork" if "fork" in mp.get_all_start_methods() else "spawn")
     chunks = [(k * N // nproc, (k + 1) * N // nproc) for k in range(nproc)]; expect = sum(range(N))
     def run_locked():
         lock, counter = ctx.Lock(), ctx.Value("q", 0, lock=False)

@@ -7,23 +7,23 @@
    "mean": 296.4,
    "std": 11.943198901466891,
    "feasible_runs": 10,
-   "time": 0.011837458610534668
+   "time": 0.004636454582214356
   },
   "greedy": {
    "obj": 244.0,
-   "time": 0.0008425712585449219
+   "time": 0.0009992122650146484
   },
   "greedy+LS": {
    "obj": 205.0,
-   "time": 0.15921640396118164
+   "time": 0.07894468307495117
   },
   "ilp": {
-   "obj": 217.0,
+   "obj": 210.0,
    "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
-   "runtime": 60.193784952163696,
-   "gap": 0.4594470046082953,
-   "nodes": 2,
-   "bound": 117.3
+   "runtime": 60.06559681892395,
+   "gap": 0.3809523809523801,
+   "nodes": 207,
+   "bound": 130.0
   }
  },
  {
@@ -34,23 +34,23 @@
    "mean": 482.7000000000001,
    "std": 23.930942313247925,
    "feasible_runs": 10,
-   "time": 0.03338079452514649
+   "time": 0.010338497161865235
   },
   "greedy": {
    "obj": 411.6,
-   "time": 0.010095357894897461
+   "time": 0.0017080307006835938
   },
   "greedy+LS": {
    "obj": 299.6,
-   "time": 1.7687911987304688
+   "time": 0.4405035972595215
   },
   "ilp": {
-   "obj": 462.6,
-   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
-   "runtime": 60.42217779159546,
-   "gap": 0.6852001617468662,
-   "nodes": 0,
-   "bound": 155.7
+   "obj": null,
+   "status": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+   "runtime": 60.56762480735779,
+   "gap": null,
+   "nodes": null,
+   "bound": null
   }
  },
  {
@@ -61,23 +61,23 @@
    "mean": 640.3,
    "std": 15.900943368240792,
    "feasible_runs": 10,
-   "time": 0.2836045026779175
+   "time": 0.20722265243530275
   },
   "greedy": {
    "obj": 638.9,
-   "time": 0.01160573959350586
+   "time": 0.0038836002349853516
   },
   "greedy+LS": {
    "obj": 481.9,
-   "time": 1.6211433410644531
+   "time": 0.9924004077911377
   },
   "ilp": {
-   "obj": 608.9,
-   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
-   "runtime": 60.530322790145874,
-   "gap": 1.0,
-   "nodes": 0,
-   "bound": 0.0
+   "obj": null,
+   "status": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+   "runtime": 60.2475426197052,
+   "gap": null,
+   "nodes": null,
+   "bound": null
   }
  },
  {
@@ -88,23 +88,23 @@
    "mean": 939.6,
    "std": 19.043108989868227,
    "feasible_runs": 10,
-   "time": 0.16872885227203369
+   "time": 0.13352565765380858
   },
   "greedy": {
    "obj": 1002.0,
-   "time": 0.024636030197143555
+   "time": 0.01796746253967285
   },
   "greedy+LS": {
    "obj": 799.0,
-   "time": 2.6870782375335693
+   "time": 1.6385319232940674
   },
   "ilp": {
-   "obj": 810.0,
-   "status": "Time limit reached. (HiGHS Status 13: Time limit reached)",
-   "runtime": 61.36531352996826,
-   "gap": 1.0,
-   "nodes": 0,
-   "bound": 0.0
+   "obj": null,
+   "status": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+   "runtime": 60.37267732620239,
+   "gap": null,
+   "nodes": null,
+   "bound": null
   }
  }
 ]

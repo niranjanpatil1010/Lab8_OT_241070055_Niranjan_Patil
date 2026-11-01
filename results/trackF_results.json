@@ -9,13 +9,13 @@
    "unoptimized": {
     "code_size_instructions": 18,
     "dynamic_cycles_executed": 18,
-    "runtime_s": 1.7e-05
+    "runtime_s": 3.6e-05
    },
    "optimized": {
     "code_size_instructions": 1,
     "dynamic_cycles_executed": 1,
-    "runtime_s": 2e-06,
-    "compile_time_s": 2.9e-05
+    "runtime_s": 5e-06,
+    "compile_time_s": 6.1e-05
    },
    "improvement": {
     "code_size_reduction_pct": 94.44,
@@ -38,13 +38,13 @@
    "unoptimized": {
     "code_size_instructions": 28,
     "dynamic_cycles_executed": 73,
-    "runtime_s": 3e-05
+    "runtime_s": 6.7e-05
    },
    "optimized": {
     "code_size_instructions": 11,
     "dynamic_cycles_executed": 29,
-    "runtime_s": 1.2e-05,
-    "compile_time_s": 4.7e-05
+    "runtime_s": 2.5e-05,
+    "compile_time_s": 0.000102
    },
    "improvement": {
     "code_size_reduction_pct": 60.71,
@@ -67,13 +67,13 @@
    "unoptimized": {
     "code_size_instructions": 23,
     "dynamic_cycles_executed": 23,
-    "runtime_s": 1.7e-05
+    "runtime_s": 2.5e-05
    },
    "optimized": {
     "code_size_instructions": 1,
     "dynamic_cycles_executed": 1,
-    "runtime_s": 2e-06,
-    "compile_time_s": 3.1e-05
+    "runtime_s": 4e-06,
+    "compile_time_s": 4.6e-05
    },
    "improvement": {
     "code_size_reduction_pct": 95.65,

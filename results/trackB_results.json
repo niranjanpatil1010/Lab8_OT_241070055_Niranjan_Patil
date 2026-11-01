@@ -4,12 +4,12 @@
   "capacity": 50,
   "greedy": {
    "value": 147,
-   "time_s": 6e-05,
+   "time_s": 0.00053,
    "gap_from_optimal_pct": 2.65
   },
   "dp_exact": {
    "value": 151,
-   "time_s": 0.00016
+   "time_s": 0.00063
   },
   "bnb_exact": {
    "value": 151,
@@ -17,7 +17,7 @@
   },
   "ilp_exact": {
    "value": 151,
-   "time_s": 0.00789
+   "time_s": 0.01979
   },
   "validation": "DP=B&B=ILP (all exact); greedy feasible; all verified by independent validator"
  },
@@ -114,12 +114,12 @@
   ],
   "greedy": {
    "cut": 22,
-   "time_s": 7e-05,
+   "time_s": 0.00028,
    "gap_from_optimal_pct": 33.33
   },
   "brute_force": {
    "cut": 33,
-   "time_s": 0.00191
+   "time_s": 0.00224
   },
   "sa_10runs": {
    "mean": 33.0,

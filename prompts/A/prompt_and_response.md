@@ -1,6 +1,6 @@
 # Track A prompt log (tool: Claude, claude.ai chat, Claude Sonnet 5.5)
 
-*The student wrote the prompts in Hinglish; they are given here translated into standard English.*
+
 
 ## Original prompt
 "Build the whole lab project for me: the report and everything the manual requires." The AI proposed building it track by track and started with Track A (continuous optimization).

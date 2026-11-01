@@ -53,17 +53,17 @@
   "exact_min_energy": -2.0,
   "parameter_shift": {
    "final_cost": -1.9505,
-   "time_s": 0.2181,
+   "time_s": 0.1752,
    "circuit_evals_per_step": 12
   },
   "spsa": {
    "final_cost": -1.0072,
-   "time_s": 0.3137,
+   "time_s": 0.2505,
    "circuit_evals_per_step": 2
   },
   "qng": {
    "final_cost": -2.0,
-   "time_s": 0.5737,
+   "time_s": 0.6428,
    "note": "Uses Fubini-Study quantum metric tensor for natural gradient descent"
   }
  },
